@@ -43,27 +43,20 @@ return response()->json([
 
     }
     public function login(Request $request){
-        //validate request
         $request->validate([
             'phoneNumber'=>'required',
             'password'=>'required'
         ]);
-
         $user = User::where('phoneNumber','=',$request->phoneNumber)->first();
-
-
-        //check user
-        if (isset($user)) {
-            if($user->number_verification==1){
-
+                if ($user) {
+            if($user->number_verification){
             if (Hash::check($request->password, $user->password)) {
-
                 $token = $user->createToken("auth_token")->plainTextToken;
                 return response()->json([
                     'status'=>1,
                     'message'=>'Login Successfully',
+                    'verified At'=>$user->number_verification,
                     'token'=>$token,
-
                 ]);
             }
             else{
@@ -77,20 +70,13 @@ return response()->json([
                 'status'=>0,
                 'message'=>'User phone  did not verified'
             ]);}
-//create token
-//response json
-
         }
         else{
-
             return response()->json([
                 'status'=>0,
                 'message'=>'user Not Registered',
-
             ]);
         }
-
-
     }
     public function logout(){
         auth()->user()->tokens()->delete();
