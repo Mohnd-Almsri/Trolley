@@ -29,11 +29,6 @@ class SendVerificationCode
 //        $user["phone"]=$event->user->phoneNumber;
 
         $message = "Your verification code is $event->code";
-        \App\Models\VerificationCode::create([
-            'user_id' => $event->user->id,
-            'code' => $event->code,
-            'type' => 'verify'
-        ]);
         $params = [
             'token' => 'tp5y8x1r00h7ravq',
             'to' => $event->user->phoneNumber,
