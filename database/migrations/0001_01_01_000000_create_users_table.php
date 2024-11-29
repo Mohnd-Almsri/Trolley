@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('phoneNumber')->unique();
 //            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('number_verification')->nullable()->default(0);
+            $table->timestamp('number_verification')->nullable()->default(0);
             $table->string('location');
 
 
