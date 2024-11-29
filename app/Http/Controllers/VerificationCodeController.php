@@ -15,6 +15,22 @@ class VerificationCodeController extends Controller
             'code' => 'required'
 
         ]);
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
        $user_code = VerificationCode::where('user_id','=',$request->user_id)->pluck('code')->first();
         if ($user_code==$request->code){
             User::where('id','=',$request->user_id)->update(['number_verification'=>now()]);
