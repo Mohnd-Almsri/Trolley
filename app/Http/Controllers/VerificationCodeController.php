@@ -30,19 +30,3 @@ class VerificationCodeController extends Controller
 
     }
 }
-//asdasdasdsadjhalkdjakljdlksajdlkjd
-//asdasdasdsadjhalkdjakljdlksajdlkjd
-//asdasdasdsadjhalkdjakljdlksajdlkjd
-//asdasdasdsadjhalkdjakljdlksajdlkjd //asdasdasdsadjhalkdjakljdlksajdlkjd
-//asdasdasdsadjhalkdjakljdlksajdlkjd
-//asdasdasdsadjhalkdjakljdlksajdlkjd
-//asdasdasdsadjhalkdjakljdlksajdlkjd //asdasdasdsadjhalkdjakljdlksajdlkjd
-//asdasdasdsadjhalkdjakljdlksajdlkjd
-//asdasdasdsadjhalkdjakljdlksajdlkjd
-//asdasdasdsadjhalkdjakljdlksajdlkjd //asdasdasdsadjhalkdjakljdlksajdlkjd
-//asdasdasdsadjhalkdjakljdlksajdlkjd
-//asdasdasdsadjhalkdjakljdlksajdlkjd
-//asdasdasdsadjhalkdjakljdlksajdlkjd //asdasdasdsadjhalkdjakljdlksajdlkjd
-//asdasdasdsadjhalkdjakljdlksajdlkjd
-//asdasdasdsadjhalkdjakljdlksajdlkjd
-//asdasdasdsadjhalkdjakljdlksajdlkjd
