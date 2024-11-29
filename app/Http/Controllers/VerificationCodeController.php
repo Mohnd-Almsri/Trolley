@@ -18,6 +18,18 @@ class VerificationCodeController extends Controller
         //asdasdasdsadjhalkdjakljdlksajdlkjd
         //asdasdasdsadjhalkdjakljdlksajdlkjd
         //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
+        //asdasdasdsadjhalkdjakljdlksajdlkjd
         //asdasdasdsadjhalkdjakljdlksajdlkjd
        $user_code = VerificationCode::where('user_id','=',$request->user_id)->pluck('code')->first();
         if ($user_code==$request->code){
