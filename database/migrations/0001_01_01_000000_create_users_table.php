@@ -20,7 +20,7 @@ return new class extends Migration
 
             $table->string('password',150);
             $table->string('number_verification')->nullable()->default(0);
-
+            $table->boolean('passwordReset')->default(0);
             $table->string('location');
 
 
