@@ -18,9 +18,11 @@ class VerificationCode
      * Create a new event instance.
      */
     public $user;
-    public function __construct($user)
+    public $code;
+    public function __construct($user,$code)
     {
         $this->user = $user;
+        $this->code = $code;
     }
 
     /**

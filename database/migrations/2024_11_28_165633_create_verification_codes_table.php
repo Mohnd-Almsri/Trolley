@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('verification_codes', function (Blueprint $table) {
             $table->id();
             $table->string('code', 6)->unique();
+            $table->string('type',10 );
             $table->foreignId('user_id')->constrained('users');
+
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@ class VerificationCodeController extends Controller
 
         ]);
 
-       $user_code = VerificationCode::where('user_id','=',$request->user_id)->pluck('code')->first();
+       $user_code = VerificationCode::where('user_id','=',$request->user_id)->where('type','=','verify')->pluck('code')->first();
         if ($user_code==$request->code){
             User::where('id','=',$request->user_id)->update(['number_verification'=>now()]);
         return response()->json([
