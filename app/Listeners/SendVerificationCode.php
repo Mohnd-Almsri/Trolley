@@ -28,11 +28,11 @@ class SendVerificationCode
 //        $user["lastName"]=$event->user->lastName;
 //        $user["phone"]=$event->user->phoneNumber;
 
-        $randomNumber = random_int(100000, 999999);
-        $message = "Your verification code is $randomNumber";
+        $message = "Your verification code is $event->code";
         \App\Models\VerificationCode::create([
             'user_id' => $event->user->id,
-            'code' => $randomNumber,
+            'code' => $event->code,
+            'type' => 'verify'
         ]);
         $params = [
             'token' => 'tp5y8x1r00h7ravq',

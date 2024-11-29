@@ -24,7 +24,7 @@ class UserController extends Controller
          $request->validate([
              'firstName' => 'required',
              'lastName' => 'required',
-             'phoneNumber' => 'required|unique:users|min:10',
+             'phoneNumber' => 'required|unique:users',
              'password' => 'required|min:8|confirmed',
              'location' => 'required',
          ]);
@@ -35,10 +35,13 @@ class UserController extends Controller
              'password' => $request->password,
              'location' => $request->location,
          ]);
-event(new VerificationCode($user));
+
+        $code= random_int(100000, 999999);
+//       لح بوقفو لهاد بس بدك ياه يبعت رسالة عل واتساب قيم الكومينت من عليه
+//        event(new VerificationCode($user,$code));
 return response()->json([
     'user' => $user,
-
+    'code' => $code,
 ]);
 
     }
@@ -85,10 +88,12 @@ return response()->json([
     'message'=>'Logout Successfully'
 ]);
     }
-    public function changePassword(Request $request){
+    public function sendCodeChangePassword(Request $request){
 
-
-
+$request->validate([
+    'phoneNumber' => 'required|unique:users'
+]);
+$userPhone = User::where('phoneNumber','=',$request->phoneNumber)->first();
 
     }
 
