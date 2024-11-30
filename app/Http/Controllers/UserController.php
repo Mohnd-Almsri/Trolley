@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Events\VerificationCode;
 use App\Http\Requests\RegisterUserRequest;
 use App\Models\User;
-use App\Traits\SendCodeTrait;
+use App\Traits\SendMessageTrait;
 use HTTP_Request2;
 use HTTP_Request2_Exception;
 use Illuminate\Http\Request;
@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    use SendCodeTrait;
+    use SendMessageTrait;
     public function index()
     {
         $users = User::all();
@@ -35,6 +35,8 @@ class UserController extends Controller
              'location' => $request->location,
          ]);
          $code=$this->verifyCode($user);
+        $message = "Your verification code is $code";
+        $this->sendMessage($user,$message);
         return response()->json([
             'user' => $user,
             'code' => $code,

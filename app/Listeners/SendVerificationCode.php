@@ -7,10 +7,10 @@ use HTTP_Request2;
 use HTTP_Request2_Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
-use App\Traits\SendCodeTrait;
+use App\Traits\SendMessageTrait;
 class SendVerificationCode
 {
-    use SendCodeTrait;
+    use SendMessageTrait;
 
     /**
      * Create the event listener.
@@ -29,8 +29,8 @@ class SendVerificationCode
 //        $user["firstName"]=$event->user->firstName;
 //        $user["lastName"]=$event->user->lastName;
 //        $user["phone"]=$event->user->phoneNumber;
-        $message = "Your verification code is $event->code";
-
-       $this->sendCode($event->user,$message);
+//        $message = "Your verification code is $event->code";
+//
+//       $this->sendMessage($event->user,$message);
     }
 }

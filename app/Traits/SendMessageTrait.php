@@ -6,7 +6,7 @@ use App\Events\VerificationCode;
 use HTTP_Request2;
 use HTTP_Request2_Exception;
 
-trait SendCodeTrait
+trait SendMessageTrait
 {
 public function verifyCode($user){
     $code= random_int(100000, 999999);
@@ -15,11 +15,11 @@ public function verifyCode($user){
         'code' => $code,
         'type' => 'verify'
     ]);
-    event(new VerificationCode($user,$code));
    return $code;
 }
-public function sendCode($user,$message)
+public function sendMessage($user,$message)
 {
+
     $params = [
         'token' => 'tp5y8x1r00h7ravq',
         'to' => $user->phoneNumber,
@@ -58,4 +58,11 @@ public function sendCode($user,$message)
         ]);
     }
 }
+
+public function VerificationMessage($code)
+{
+    return "Your verification code is $code .";
+
+}
+
 }
