@@ -35,9 +35,6 @@ class UserController extends Controller
              'location' => $request->location,
          ]);
          return $this->sendCode($user);
-
-
-
     }
     public function login(Request $request){
         $request->validate([
