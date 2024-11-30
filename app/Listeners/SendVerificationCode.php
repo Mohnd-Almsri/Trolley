@@ -25,12 +25,7 @@ class SendVerificationCode
      */
     public function handle(VerificationCode $event)
     {
-//        $user =[];
-//        $user["firstName"]=$event->user->firstName;
-//        $user["lastName"]=$event->user->lastName;
-//        $user["phone"]=$event->user->phoneNumber;
-//        $message = "Your verification code is $event->code";
-//
+
 //       $this->sendMessage($event->user,$message);
     }
 }

@@ -23,7 +23,7 @@ class VerificationCodeRequest extends FormRequest
     {
         return [
             'user_id' => 'required',
-            'code' => 'required'
+            'code' => 'required|min:6|max:6',
         ];
     }
 }

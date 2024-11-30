@@ -8,21 +8,25 @@ use HTTP_Request2_Exception;
 
 trait SendMessageTrait
 {
-public function verifyCode($user){
+public function verifyCodegenerate($user_id){
     $code= random_int(100000, 999999);
     \App\Models\VerificationCode::create([
-        'user_id' => $user->id,
+        'user_id' => $user_id,
         'code' => $code,
         'type' => 'verify'
     ]);
-   return $code;
+    return $code;
 }
-public function sendMessage($user,$message)
+public function sendVerificationCode($user_phone,$code){
+    $message="Your verification code is $code ";
+    $this->sendMessage($user_phone,$message);
+}
+public function sendMessage($user_phone,$message)
 {
 
     $params = [
         'token' => 'tp5y8x1r00h7ravq',
-        'to' => $user->phoneNumber,
+        'to' => "+963".$user_phone,
         'body' => $message
     ];
 
@@ -57,12 +61,6 @@ public function sendMessage($user,$message)
             'error' => $e->getMessage()
         ]);
     }
-}
-
-public function VerificationMessage($code)
-{
-    return "Your verification code is $code .";
-
 }
 
 }
