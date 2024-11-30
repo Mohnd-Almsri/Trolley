@@ -26,7 +26,7 @@ public function sendMessage($user_phone,$message)
 
     $params = [
         'token' => 'tp5y8x1r00h7ravq',
-        'to' => "+963".$user_phone,
+        'to' => "+963".substr($user_phone,-9),
         'body' => $message
     ];
 
