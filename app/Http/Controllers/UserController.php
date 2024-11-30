@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Events\VerificationCode;
 use App\Http\Requests\RegisterUserRequest;
 use App\Models\User;
+use App\Traits\SendCodeTrait;
 use HTTP_Request2;
 use HTTP_Request2_Exception;
 use Illuminate\Http\Request;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    use SendCodeTrait;
     public function index()
     {
         $users = User::all();
@@ -32,19 +34,9 @@ class UserController extends Controller
              'password' => $request->password,
              'location' => $request->location,
          ]);
+        $this->sendCode($user);
 
-        $code= random_int(100000, 999999);
-        \App\Models\VerificationCode::create([
-            'user_id' => $user->id,
-            'code' => $code,
-            'type' => 'verify'
-        ]);
-//       لح بوقفو لهاد بس بدك ياه يبعت رسالة عل واتساب قيم الكومينت من عليه
-//        event(new VerificationCode($user,$code));
-return response()->json([
-    'user' => $user,
-    'code' => $code,
-]);
+
 
     }
     public function login(Request $request){

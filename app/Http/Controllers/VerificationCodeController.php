@@ -2,19 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\VerificationCodeRequest;
 use App\Models\User;
 use App\Models\VerificationCode;
 use Illuminate\Http\Request;
 
 class VerificationCodeController extends Controller
 {
-    public function verification(Request $request){
-
-        $request->validate([
-            'user_id' => 'required',
-            'code' => 'required'
-
-        ]);
+    public function verification(VerificationCodeRequest $request){
 
        $user_code = VerificationCode::where('user_id','=',$request->user_id)->where('type','=','verify')->pluck('code')->first();
         if ($user_code==$request->code){
