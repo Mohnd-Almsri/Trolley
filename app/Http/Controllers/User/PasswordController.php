@@ -20,6 +20,9 @@ class PasswordController extends Controller
         if ($user) {
             $code=$this->verifyCodegenerate($user->id);
             $this->sendVerificationCode($user->phoneNumber,$code);
+            return response()->json([
+                'status'=> '1',
+                'code'=>$code]);
         }
         return response()->json([
             'success' => false,
@@ -35,17 +38,26 @@ class PasswordController extends Controller
             'code' => 'required|min:6|max:6',
         ]);
         $user = User::where('phoneNumber','=',$request->phoneNumber)->first();
-            $user_code = \App\Models\VerificationCode::where('user_id','=',$user->id)->where('type','=','password')->pluck('code')->first();
-        if ($user_code==$request->code){
-            User::where('phoneNumber','=',$request->phoneNumber)->update(['passwordReset'=>1]);
+        if ($user) {
+            $user_code =User::where('verification_code','=',$request->code)->pluck('verification_code')->first();
+            if ($user_code==$request->code){
+                User::where('phoneNumber','=',$request->phoneNumber)->update(['passwordReset'=>1]);
+                return response()->json([
+                    'status'=>'success',
+                    'message'=>'Code Verified Successfully']);
+            }
+            else{return response()->json([
+                'status'=>'failed',
+                'message'=>'Code is incorrect']);
+            }
+        }
+        else {
             return response()->json([
-                'status'=>'success',
-                'message'=>'Code Verified Successfully']);
+                'status'=>'0',
+                'message'=>'Phone Number Not Registered'
+            ]);
         }
-        else{return response()->json([
-            'status'=>'failed',
-            'message'=>'Code  did not verify']);
-        }
+
     }
     public function changePassword(Request $request)
     {
@@ -55,7 +67,8 @@ class PasswordController extends Controller
         ]);
 
         $user = User::where('phoneNumber','=',$request->phoneNumber)->first();
-        if ($user->passwordReset==1) {
+        if ($user) {
+            if ($user->passwordReset==1) {
             $user->update([
                 'passwordReset'=>0,
                 'password'=>$request->password
@@ -66,10 +79,17 @@ class PasswordController extends Controller
                 'message'=>'Password Changed Successfully'
             ]);
         }
-        return response()->json([
-            'status'=>0,
-            'message'=>'Phone Number Not Registered'
+            return response()->json([
+                'status'=>0,
+                'message'=>'you can not change your password'
+            ]);
+        }
+        else{return response()->json([
+        'status'=>0,
+     'message'=>'Phone Number Not Registered'
         ]);
+            }
     }
+
 
 }

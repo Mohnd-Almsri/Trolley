@@ -41,7 +41,7 @@ class UserController extends Controller
     }
     public function login(Request $request){
         $request->validate([
-            'phoneNumber'=>'required|min:10|max:10',
+            'phoneNumber'=>'required',
             'password'=>'required|min:8'
         ]);
         $user = User::where('phoneNumber','=',$request->phoneNumber)->first();

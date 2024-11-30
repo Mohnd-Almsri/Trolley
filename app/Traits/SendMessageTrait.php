@@ -3,6 +3,7 @@
 namespace App\Traits;
 
 use App\Events\VerificationCode;
+use App\Models\User;
 use HTTP_Request2;
 use HTTP_Request2_Exception;
 
@@ -10,11 +11,7 @@ trait SendMessageTrait
 {
 public function verifyCodegenerate($user_id){
     $code= random_int(100000, 999999);
-    \App\Models\VerificationCode::create([
-        'user_id' => $user_id,
-        'code' => $code,
-        'type' => 'verify'
-    ]);
+    User::where('id','=',$user_id)->update(['verification_code'=>$code]);
     return $code;
 }
 public function sendVerificationCode($user_phone,$code){

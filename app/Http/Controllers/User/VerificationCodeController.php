@@ -10,18 +10,27 @@ use App\Models\VerificationCode;
 class VerificationCodeController extends Controller
 {
     public function verification(VerificationCodeRequest $request){
-
-       $user_code = VerificationCode::where('user_id','=',$request->user_id)->where('type','=','verify')->pluck('code')->first();
-        if ($user_code==$request->code){
-            User::where('id','=',$request->user_id)->update(['number_verification'=>now()]);
+$user = User::where('id','=',$request->user_id)->first();
+if ($user){
+    $user_code =User::where('verification_code','=',$request->code)->pluck('verification_code')->first();
+    if ($user_code==$request->code){
+        User::where('id','=',$request->user_id)->update([
+            'verification_code'=>null,
+            'number_verification'=>now()]);
         return response()->json([
             'status'=>'success',
             'message'=>'Code Verified Successfully']);
-        }
-        else{return response()->json([
-            'status'=>'failed',
-            'message'=>'Code  did not verify']);
-        }
+    }
+    else{return response()->json([
+        'status'=>'failed',
+        'message'=>'Code  is incorrect']);
+    }
+
+}
+else{return response()->json([
+    'status'=>'failed',
+    'message' => 'Phone Number Not Registered'
+]);}
 
     }
 }
