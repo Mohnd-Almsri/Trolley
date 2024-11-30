@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Events\VerificationCode;
+use App\Http\Requests\RegisterUserRequest;
 use App\Models\User;
 use HTTP_Request2;
 use HTTP_Request2_Exception;
@@ -22,14 +23,8 @@ class UserController extends Controller
 
 
     }
-    public function register(Request $request){
-         $request->validate([
-             'firstName' => 'required',
-             'lastName' => 'required',
-             'phoneNumber' => 'required|unique:users',
-             'password' => 'required|min:8|confirmed',
-             'location' => 'required',
-         ]);
+    public function register(RegisterUserRequest $request){
+
          $user = User::create([
              'firstName' => $request->firstName,
              'lastName' => $request->lastName,
