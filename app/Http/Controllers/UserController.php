@@ -34,7 +34,7 @@ class UserController extends Controller
              'password' => $request->password,
              'location' => $request->location,
          ]);
-        $this->sendCode($user);
+         return $this->sendCode($user);
 
 
 
