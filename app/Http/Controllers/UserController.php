@@ -34,7 +34,7 @@ class UserController extends Controller
              'password' => $request->password,
              'location' => $request->location,
          ]);
-         $code=$this->sendCode($user);
+         $code=$this->verifyCode($user);
         return response()->json([
             'user' => $user,
             'code' => $code,
@@ -93,7 +93,7 @@ $user = User::where('phoneNumber','=',$request->phoneNumber)->first();
 if ($user) {
     $code= random_int(100000, 999999);
 
-    $message = "Your reset Password code is $code";
+    $message = "Your reset password code is $code";
     \App\Models\VerificationCode::create([
         'user_id' => $user->id,
         'code' => $code,
