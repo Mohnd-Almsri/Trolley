@@ -14,9 +14,6 @@ public function sendCode($user){
         'type' => 'verify'
     ]);
     event(new VerificationCode($user,$code));
-    return response()->json([
-        'user' => $user,
-        'code' => $code,
-    ]);
+   return $code;
 }
 }

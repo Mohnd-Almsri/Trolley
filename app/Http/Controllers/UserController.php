@@ -34,7 +34,11 @@ class UserController extends Controller
              'password' => $request->password,
              'location' => $request->location,
          ]);
-         return $this->sendCode($user);
+         $code=$this->sendCode($user);
+        return response()->json([
+            'user' => $user,
+            'code' => $code,
+        ]);
     }
     public function login(Request $request){
         $request->validate([
