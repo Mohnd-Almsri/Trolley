@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\PasswordController;
 
+Route::get('/',[UserController::class,'index']);
 Route::post('/register', [UserController::class, 'register']);
+Route::post('/resendcode', [VerificationCodeController::class, 'resendCode']);
 Route::post('/login', [UserController::class, 'login'])->middleware(verificationMiddleware::class);
 Route::post('/resetPassword', [PasswordController::class, 'sendCodeChangePassword'])->middleware(verificationMiddleware::class);
 Route::post('/codeResetPassword', [PasswordController::class, 'checkCodeChangePassword'])->middleware(verificationMiddleware::class);

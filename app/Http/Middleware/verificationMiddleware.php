@@ -16,7 +16,7 @@ class verificationMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-
+          
           $user =User::where('phoneNumber','=',$request->phoneNumber)->first(); ;
 
         if($user){
@@ -30,7 +30,7 @@ class verificationMiddleware
         else{
             return response()->json([
                 'status' => '0',
-                'message' => 'Phone Number Not ئءRegistered'
+                'message' => 'Phone Number Not Registered'
 
             ]);
         }
