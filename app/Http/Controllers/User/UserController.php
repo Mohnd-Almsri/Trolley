@@ -21,7 +21,6 @@ class UserController extends Controller
     public function show($id)
     {
 
-
     }
     public function register(RegisterUserRequest $request){
 
@@ -46,27 +45,29 @@ class UserController extends Controller
         ]);
         $user = User::where('phoneNumber','=',$request->phoneNumber)->first();
                 if ($user) {
-            if($user->number_verification){
-            if (Hash::check($request->password, $user->password)) {
+            if(Hash::check($request->password, $user->password)){
+            if ($user->number_verification) {
                 $token = $user->createToken("auth_token")->plainTextToken;
                 return response()->json([
                     'status'=>1,
                     'message'=>'Login Successfully',
-                    'verified At'=>$user->number_verification,
                     'token'=>$token,
                 ]);
             }
+            else{
+
+                return response()->json([
+                    'status'=>0,
+                    'message'=>'User phone  did not verified'
+                ]);
+
+            }}
             else{
                 return response()->json([
                     'status'=>0,
                     'message'=>'password did not match'
                 ]);
-            }}
-            else{
-                return response()->json([
-                'status'=>0,
-                'message'=>'User phone  did not verified'
-            ]);}
+            }
         }
         else{
             return response()->json([

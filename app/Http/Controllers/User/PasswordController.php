@@ -66,6 +66,8 @@ class PasswordController extends Controller
             'password' => 'required|min:8|confirmed',
         ]);
 
+        auth()->user()->id;
+
         $user = User::where('phoneNumber','=',$request->phoneNumber)->first();
         if ($user) {
             if ($user->passwordReset==1) {
@@ -73,7 +75,6 @@ class PasswordController extends Controller
                 'passwordReset'=>0,
                 'password'=>$request->password
             ]);
-
             return response()->json([
                 'status'=>1,
                 'message'=>'Password Changed Successfully'
