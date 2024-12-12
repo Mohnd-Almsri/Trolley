@@ -26,6 +26,7 @@ class User extends Authenticatable
         'verification_code'
     ];
 
+
     /**
      * The attributes that should be hidden for serialization.
      *

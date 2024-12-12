@@ -69,10 +69,11 @@ class UserController extends Controller
                 ]);
             }
         }
-        else{
+        else {
             return response()->json([
                 'status'=>0,
                 'message'=>'user Not Registered',
+
             ]);
         }
     }
