@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('firstName',20);
             $table->string('lastName',20);
             $table->string('phoneNumber',10)->unique();
-            $table->string('password',40);
+            $table->string('password',150);
             $table->string('number_verification')->nullable()->default(0);
             $table->boolean('passwordReset')->default(0);
             $table->string('verification_code',6)->nullable()->default(0);

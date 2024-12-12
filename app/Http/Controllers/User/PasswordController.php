@@ -66,7 +66,6 @@ class PasswordController extends Controller
             'password' => 'required|min:8|confirmed',
         ]);
 
-        auth()->user()->id;
 
         $user = User::where('phoneNumber','=',$request->phoneNumber)->first();
         if ($user) {
