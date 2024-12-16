@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 class PasswordController extends Controller
 {
     use SendMessageTrait;
+
+    //تابع نرسل له الرقم لتغيير كلمة السر
     public function sendCodeChangePassword(Request $request){
 
         $request->validate([
@@ -21,16 +23,16 @@ class PasswordController extends Controller
             $code=$this->verifyCodegenerate($user->id);
             $this->sendVerificationCode($user->phoneNumber,$code);
             return response()->json([
-                'status'=> '1',
+                'status'=> 1,
                 'code'=>$code]);
         }
         return response()->json([
-            'success' => false,
+            'status' => 0,
             'message' => 'Phone Number Not Registered'
         ]);
 
     }
-
+    //للتاكد من الكود المرسل
     public function checkCodeChangePassword (Request $request)
     {
         $request->validate([
@@ -43,17 +45,17 @@ class PasswordController extends Controller
             if ($user_code==$request->code){
                 User::where('phoneNumber','=',$request->phoneNumber)->update(['passwordReset'=>1]);
                 return response()->json([
-                    'status'=>'success',
+                    'status'=>1,
                     'message'=>'Code Verified Successfully']);
             }
             else{return response()->json([
-                'status'=>'failed',
+                'status'=>0,
                 'message'=>'Code is incorrect']);
             }
         }
         else {
             return response()->json([
-                'status'=>'0',
+                'status'=>0,
                 'message'=>'Phone Number Not Registered'
             ]);
         }
