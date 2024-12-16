@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "fc4aaa1f-6d59-4eb2-9b34-f8a4239f3a2c",
+		"_postman_id": "0e464310-5a2e-41e6-8dc4-546b3183c5b6",
 		"name": "Trolley",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "39661738"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "39659975"
 	},
 	"item": [
 		{
@@ -57,21 +57,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/register",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"register"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/register"
 			},
 			"response": [
 				{
@@ -125,21 +111,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/register",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"register"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/register"
 					},
 					"status": "OK",
 					"code": 200,
@@ -234,21 +206,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/register",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"register"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/register"
 					},
 					"status": "Unprocessable Content",
 					"code": 422,
@@ -337,21 +295,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/register",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"register"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/register"
 					},
 					"status": "Unprocessable Content",
 					"code": 422,
@@ -422,21 +366,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/verification",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"verification"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/verification"
 			},
 			"response": [
 				{
@@ -470,21 +400,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/verification",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"verification"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/verification"
 					},
 					"status": "OK",
 					"code": 200,
@@ -555,21 +471,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/verification",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"verification"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/verification"
 					},
 					"status": "Unprocessable Content",
 					"code": 422,
@@ -638,21 +540,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/verification",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"verification"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/verification"
 					},
 					"status": "OK",
 					"code": 200,
@@ -721,21 +609,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/verification",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"verification"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/verification"
 					},
 					"status": "OK",
 					"code": 200,
@@ -806,21 +680,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/login",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"login"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/login"
 			},
 			"response": [
 				{
@@ -854,21 +714,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/login",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"login"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/login"
 					},
 					"status": "OK",
 					"code": 200,
@@ -937,21 +783,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/login",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"login"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/login"
 					},
 					"status": "OK",
 					"code": 200,
@@ -1020,21 +852,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/login",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"login"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/login"
 					},
 					"status": "OK",
 					"code": 200,
@@ -1103,21 +921,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/login",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"login"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/login"
 					},
 					"status": "OK",
 					"code": 200,
@@ -1183,21 +987,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/resetPassword",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"resetPassword"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/resetPassword"
 			},
 			"response": [
 				{
@@ -1226,21 +1016,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/resetPassword",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"resetPassword"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/resetPassword"
 					},
 					"status": "OK",
 					"code": 200,
@@ -1304,21 +1080,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/resetPassword",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"resetPassword"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/resetPassword"
 					},
 					"status": "OK",
 					"code": 200,
@@ -1389,21 +1151,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/codeResetPassword",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"codeResetPassword"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/codeResetPassword"
 			},
 			"response": [
 				{
@@ -1437,21 +1185,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/codeResetPassword",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"codeResetPassword"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/codeResetPassword"
 					},
 					"status": "OK",
 					"code": 200,
@@ -1520,21 +1254,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/codeResetPassword",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"codeResetPassword"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/codeResetPassword"
 					},
 					"status": "OK",
 					"code": 200,
@@ -1603,21 +1323,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/codeResetPassword",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"codeResetPassword"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/codeResetPassword"
 					},
 					"status": "OK",
 					"code": 200,
@@ -1686,21 +1392,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/codeResetPassword",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"codeResetPassword"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/codeResetPassword"
 					},
 					"status": "OK",
 					"code": 200,
@@ -1741,7 +1433,7 @@
 			]
 		},
 		{
-			"name": "chande password",
+			"name": "reset password",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -1776,21 +1468,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/changePassword",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"changePassword"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/changePassword"
 			},
 			"response": [
 				{
@@ -1829,21 +1507,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/changePassword",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"changePassword"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/changePassword"
 					},
 					"status": "OK",
 					"code": 200,
@@ -1917,21 +1581,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/changePassword",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"changePassword"
-							]
-						}
+						"url": "http://127.0.0.1:8000/api/changePassword"
 					},
 					"status": "OK",
 					"code": 200,
@@ -1970,6 +1620,248 @@
 					"body": "{\n    \"status\": \"0\",\n    \"message\": \"Phone Number Not Registered\"\n}"
 				}
 			]
+		},
+		{
+			"name": "changePassword",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phoneNumber",
+							"value": "0997393611",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234567890",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "1234567890",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/changePassword"
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phoneNumber",
+									"value": "0997393611",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234567890",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "1234567890",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/changePassword"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 20:45:59 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 1,\n    \"message\": \"Password Changed Successfully\"\n}"
+				},
+				{
+					"name": "register number require",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phoneNumber",
+									"value": "099739361",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234567890",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "1234567890",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/changePassword"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 21:47:16 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"0\",\n    \"message\": \"Phone Number Not Registered\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "1|AAwM9B0b6PlwKv8rCX0p8CcGqpKIUuFwzDFTR6xR74044172"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "firstName",
+							"value": "mohnd",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "ibrahem",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/update"
+			},
+			"response": []
 		}
 	]
 }

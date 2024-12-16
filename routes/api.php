@@ -7,15 +7,32 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\PasswordController;
 
-Route::get('/',[UserController::class,'index']);
-Route::post('/register', [UserController::class, 'register']);
-Route::post('/resendcode', [VerificationCodeController::class, 'resendCode']);
-Route::post('/login', [UserController::class, 'login'])->middleware(verificationMiddleware::class);
-Route::post('/resetPassword', [PasswordController::class, 'sendCodeChangePassword'])->middleware(verificationMiddleware::class);
-Route::post('/codeResetPassword', [PasswordController::class, 'checkCodeChangePassword'])->middleware(verificationMiddleware::class);
-Route::post('/changePassword', [PasswordController::class, 'changePassword'])->middleware(verificationMiddleware::class);
-Route::get('/logout', [UserController::class, 'logout'])->middleware('auth:sanctum');
-Route::post('/verification', [VerificationCodeController::class, 'verification']);
+Route::controller(PasswordController::class)->group(function () {
+   Route::middleware([verificationMiddleware::class])->group(function () {
+       Route::post('/resetPassword', 'sendCodeChangePassword');
+       Route::post('/codeResetPassword',  'checkCodeChangePassword');
+            Route::post('/resetPassword','changePassword');
+   });
+});
+
+Route::controller(UserController::class)->group(function () {
+    Route::get('/',[UserController::class,'index']);
+    Route::post('/register', 'register');
+    Route::get('/logout',  'logout')->middleware('auth:sanctum');
+    Route::post('/login', 'login')->middleware(verificationMiddleware::class);
+    Route::post('/update', 'update')->middleware('auth:sanctum');
+    Route::post('/changePassword', 'changePassword')->middleware('auth:sanctum');
+
+});
+
+Route::controller(VerificationCodeController::class)->group(function () {
+    Route::post('/reSendCode','resendCode');
+Route::post('/verification',  'verification');
+
+});
+
+
+
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');

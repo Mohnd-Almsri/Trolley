@@ -3,7 +3,9 @@
 namespace App\Traits;
 
 use App\Events\VerificationCode;
+use App\Jobs\DeleteExpiredVerificationCodes;
 use App\Models\User;
+use Carbon\Carbon;
 use HTTP_Request2;
 use HTTP_Request2_Exception;
 
@@ -11,7 +13,10 @@ trait SendMessageTrait
 {
 public function verifyCodegenerate($user_id){
     $code= random_int(100000, 999999);
-    User::where('id','=',$user_id)->update(['verification_code'=>$code]);
+    User::where('id','=',$user_id)->update([
+        'verification_code'=>$code,
+        'verification_code_expires_at'=>Carbon::now()->addMinutes(10)]);
+    DeleteExpiredVerificationCodes::dispatch()->delay(now()->addMinutes(10.018));
     return $code;
 }
 public function sendVerificationCode($user_phone,$code){

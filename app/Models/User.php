@@ -23,7 +23,8 @@ class User extends Authenticatable
         'phoneNumber',
         'location',
         'password',
-        'verification_code'
+        'verification_code',
+
     ];
 
 

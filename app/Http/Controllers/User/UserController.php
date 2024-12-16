@@ -77,6 +77,52 @@ class UserController extends Controller
             ]);
         }
     }
+    public function update(Request $request){
+
+        $request->validate([
+            'firstName' => 'required',
+            'lastName'  => 'required',
+        ]);
+        auth()->user()->update([
+            'firstName'=>$request->firstName,
+            'lastName'=>$request->lastName]);
+//User::where('id',$id)->update([
+//]);
+return response()->json([
+    'status'=>1,
+    'message'=>'Update Successfully'
+]);
+
+
+
+    }
+    public function ChangePassword(Request $request){
+        $request->validate([
+            'currentPassword'=>'required',
+            'newPassword'=>'required|min:8|confirmed',
+        ]);
+
+        if(Hash::check($request->currentPassword, auth()->user()->password)) {
+
+        auth()->user()->update([
+           'password'=>$request->newPassword
+        ]);
+        return response()->json([
+            'status'=>1,
+            'message'=>'Password Changed Successfully'
+        ]);
+        }
+        else{
+            return response()->json([
+                'status'=>0,
+                'message'=>'Current Password Not Match',
+            ]);
+        }
+
+
+
+    }
+
     public function logout(){
         auth()->user()->tokens()->delete();
     return response()->json([

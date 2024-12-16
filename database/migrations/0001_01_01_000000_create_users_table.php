@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('number_verification')->nullable()->default(0);
             $table->boolean('passwordReset')->default(0);
             $table->string('verification_code',6)->nullable()->default(0);
+            $table->timestamp('verification_code_expires_at')->nullable();
             $table->string('location');
             $table->rememberToken();
             $table->timestamps();
