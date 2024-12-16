@@ -29,8 +29,8 @@ class VerificationCodeController extends Controller
     }
     }
     else{return response()->json([
-    'status'=>0,
-    'message' => 'Phone Number Not Registered'
+        'status'=>0,
+        'message' => 'Phone Number Not Registered'
     ]);}
 
     }
