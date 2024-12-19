@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StoreController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\VerificationCodeController;
 use App\Http\Middleware\verificationMiddleware;
@@ -29,6 +31,12 @@ Route::controller(VerificationCodeController::class)->group(function () {
     Route::post('/reSendCode','resendCode');
 Route::post('/verification',  'verification');
 
+});
+Route::controller(StoreController::class)->group(function () {
+    Route::post('/store', 'StoreInfo');
+});
+Route::controller(ProductController::class)->group(function () {
+    Route::post('/review', 'addReview');
 });
 
 
