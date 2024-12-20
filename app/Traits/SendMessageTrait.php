@@ -84,7 +84,7 @@ $i=1;
             $i++;
         }
 
-        $message .= "We appreciate your business! Please let us know if you have any questions.\n\n";
+        $message .= "\nWe appreciate your business! Please let us know if you have any questions.\n\n";
         $message .= "Best regards,\n    *TROLLEY* ";
 
         return $message;

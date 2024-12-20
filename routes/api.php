@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ProductController;
@@ -40,6 +41,10 @@ Route::controller(StoreController::class)->group(function () {
 Route::controller(ProductController::class)->group(function () {
     Route::post('/review', 'addReview');
     Route::get('getFavoriteProducts', 'getFavoriteProducts');
+});
+
+Route::controller(AdminController::class)->group(function () {
+    Route::post('/addAdminToStore', 'addAdminToStore')->middleware('auth:sanctum');
 });
 Route::controller(OrderController::class)->group(function () {
     Route::post('/createOrder', 'createOrder')->middleware('auth:sanctum');
