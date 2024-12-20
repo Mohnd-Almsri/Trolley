@@ -4,6 +4,7 @@ namespace App\Traits;
 
 use App\Events\VerificationCode;
 use App\Jobs\DeleteExpiredVerificationCodes;
+use App\Models\OrderItem;
 use App\Models\User;
 use Carbon\Carbon;
 use HTTP_Request2;
@@ -64,5 +65,31 @@ public function sendMessage($user_phone,$message)
         ]);
     }
 }
+
+    function formatOrderToText($order) {
+
+        $order->load(['orderItems.product', 'user']);
+
+        $userName = $order->user->firstName . ' ' . $order->user->lastName;
+
+        $message = "Hello {$userName},\n\n";
+        $message .= "Thank you for your order! Here are the details:\n\n";
+        $message .= "Order ID: {$order->id}\n";
+        $message .= "Total Price: \${$order->total_price}\n\n";
+        $message .= "Products:\n";
+$i=1;
+        foreach ($order->orderItems as $orderItem) {
+            $product = $orderItem->product;
+            $message .= "$i . {$product->name}  ( Quantity: {$orderItem->quantity} , Price: \${$product->price} , Total Price: \${$orderItem->total_price})\n";
+            $i++;
+        }
+
+        $message .= "We appreciate your business! Please let us know if you have any questions.\n\n";
+        $message .= "Best regards,\n    *TROLLEY* ";
+
+        return $message;
+    }
+
+
 
 }

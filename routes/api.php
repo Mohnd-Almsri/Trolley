@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\User\UserController;
@@ -37,6 +38,12 @@ Route::controller(StoreController::class)->group(function () {
 });
 Route::controller(ProductController::class)->group(function () {
     Route::post('/review', 'addReview');
+});
+Route::controller(OrderController::class)->group(function () {
+    Route::post('/createOrder', 'createOrder')->middleware('auth:sanctum');
+    Route::get('/userOrders', 'userOrders')->middleware('auth:sanctum');
+    Route::post('/deleteOrder', 'deleteOrder')->middleware('auth:sanctum');
+    Route::post('/UpdateOrder', 'UpdateOrder')->middleware('auth:sanctum');
 });
 
 
