@@ -7,6 +7,7 @@ use App\Http\Requests\addReviewRequest;
 use App\Models\Comment;
 use App\Models\Product;
 use App\Models\Store;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -61,6 +62,17 @@ class ProductController extends Controller
                 'message'=>'Product not found'
             ]);
         }
+    }
+    public function getFavoriteProducts(Request $request)
+    {
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+        ]);
+        $favorites=User::find($request->user_id)->favorites;
+        return response()->json([
+            'status'=>1,
+            'favorites'=>$favorites
+        ]);
     }
     public function addReview(addReviewRequest $request){
         Comment::create($request->all());

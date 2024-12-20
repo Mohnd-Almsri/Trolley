@@ -37,12 +37,15 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-
+    public function favorites(){
+        return $this->belongsToMany(Product::class,'favorites','user_id','product_id');
+    }
     /**
-     * Get the attributes that should be cast.
+     * Get the attributes that should be cast
      *
      * @return array<string, string>
      */
+
     protected function casts(): array
     {
         return [
