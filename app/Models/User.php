@@ -40,6 +40,12 @@ class User extends Authenticatable
     public function favorites(){
         return $this->belongsToMany(Product::class,'favorites','user_id','product_id');
     }
+    public function order()
+    {
+        return $this->hasMany(Order::class);
+
+    }
+
     /**
      * Get the attributes that should be cast
      *
@@ -53,11 +59,5 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-
-    public function order()
-    {
-        return $this->hasMany(Order::class);
-    }
-
 }
 

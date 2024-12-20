@@ -12,30 +12,12 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function addProductForStore(addProductRequest $request)
+    public function addProduct(addProductRequest $request)
     {
         Product::create([$request->all()]);
         return response()->json(['message' => 'Product added successfully']);
     }
-    public function getProducts(request $request){
-        $request->validate([
-            'store_id' => 'required'
-        ]);
-        $products=Product::where($request->store_id,'=','store_id')->get();
-        if($products){
-        return response()->json([
-            'status'=>1,
-            'products' => $products,
-            'message'=>'Products added successfully'
-        ]);
-        }else{
-            return response()->json([
-                'status'=>0,
-                'message'=>'Products not found'
-            ]);
-        }
-    }
-    public function getProduct(request $request)
+    public function getProductInfo(request $request)
     {
         $request->validate([
             'product_id' => 'required|exists:products,id',
@@ -89,4 +71,22 @@ class ProductController extends Controller
         $store->reviews=$sr/$store->reviews_count;
         $store->save();
     }
+    /*  public function searchProducts(request $request){
+          $request->validate([
+              'search' => 'required'
+          ]);
+          $products=Product::where('name','LIKE','%'.$request->search.'%')->take(15)->get();
+          if($products){
+          return response()->json([
+              'status'=>1,
+              'products' => $products,
+              'message'=>'Products added successfully'
+          ]);
+          }else{
+              return response()->json([
+                  'status'=>0,
+                  'message'=>'Products not found'
+              ]);
+          }
+     } */
 }
