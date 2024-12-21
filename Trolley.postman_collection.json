@@ -1917,6 +1917,59 @@
 			"response": []
 		},
 		{
+			"name": "add admin to store",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "1|AAwM9B0b6PlwKv8rCX0p8CcGqpKIUuFwzDFTR6xR74044172"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "firstName",
+							"value": "mohnd",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "ibrahem",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/update"
+			},
+			"response": []
+		},
+		{
 			"name": "user orders",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -2060,6 +2113,501 @@
 				"url": "http://127.0.0.1:8000/api/update"
 			},
 			"response": []
+		},
+		{
+			"name": "add product to store",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "1|AAwM9B0b6PlwKv8rCX0p8CcGqpKIUuFwzDFTR6xR74044172"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "firstName",
+							"value": "mohnd",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "ibrahem",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/update"
+			},
+			"response": []
+		},
+		{
+			"name": "delete admin from store",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "1|AAwM9B0b6PlwKv8rCX0p8CcGqpKIUuFwzDFTR6xR74044172"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "firstName",
+							"value": "mohnd",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "ibrahem",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/update"
+			},
+			"response": []
+		},
+		{
+			"name": "get All Admins",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "1|AAwM9B0b6PlwKv8rCX0p8CcGqpKIUuFwzDFTR6xR74044172"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "firstName",
+							"value": "mohnd",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "ibrahem",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/update"
+			},
+			"response": []
+		},
+		{
+			"name": "get store Products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "12|aHKCbyK08m41Nd4SOPBXiasV3WbtYnJPYN1NzFjDbf963b90"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "firstName",
+							"value": "mohnd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "lastName",
+							"value": "ibrahem",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/getProducts"
+			},
+			"response": []
+		},
+		{
+			"name": "delete product from store",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "12|aHKCbyK08m41Nd4SOPBXiasV3WbtYnJPYN1NzFjDbf963b90"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "firstName",
+							"value": "mohnd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "lastName",
+							"value": "ibrahem",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/getProducts"
+			},
+			"response": []
+		},
+		{
+			"name": "update Product by admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "12|aHKCbyK08m41Nd4SOPBXiasV3WbtYnJPYN1NzFjDbf963b90"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "condom",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "it is perfect to save your life away from the hell",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "0.99",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/updateProduct"
+			},
+			"response": []
+		},
+		{
+			"name": "update store",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "12|aHKCbyK08m41Nd4SOPBXiasV3WbtYnJPYN1NzFjDbf963b90"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "condom",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "it is perfect to save your life away from the hell",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "0.99",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/updateProduct"
+			},
+			"response": []
+		},
+		{
+			"name": "change admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "12|aHKCbyK08m41Nd4SOPBXiasV3WbtYnJPYN1NzFjDbf963b90"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "condom",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "it is perfect to save your life away from the hell",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "0.99",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/updateProduct"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "25|EIDTfhDPMGmhdS9eR3zpwlZpXhwhFd8jVH6kjpce45ed1b75",
+			"type": "string"
+		},
+		{
+			"key": "token2",
+			"value": "24|tJXToA0ZykM4AKD3UXIJm7UHa7XmVPjH8Fax1tOfd94e1317",
+			"type": "string"
 		}
 	]
 }

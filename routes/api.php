@@ -54,20 +54,22 @@ Route::controller(\App\Http\Controllers\SearchController::class)->group(function
     Route::get('/search', 'search');
 });
 
-Route::controller(AdminController::class)->group(function () {
-    Route::post('/addAdminToStore', 'addAdminToStore')->middleware('auth:sanctum');
-    Route::post('/addProductToStore', 'addProductToStore')->middleware('auth:sanctum');
-    Route::post('/deleteAdminFromStore', 'deleteAdminFromStore')->middleware('auth:sanctum');
-    Route::get('/getAdmins', 'getAdmins')->middleware('auth:sanctum');
-    Route::get('/getProducts', 'getProducts')->middleware('auth:sanctum');
-    Route::post('/deleteProductFromStore', 'deleteProductFromStore')->middleware('auth:sanctum');
-    Route::post('/updateProduct', 'updateProduct')->middleware('auth:sanctum');
+Route::controller(AdminController::class)->middleware('auth:sanctum')->group(function () {
+    Route::post('/addAdminToStore', 'addAdminToStore');
+    Route::post('/addProductToStore', 'addProductToStore');
+    Route::post('/deleteAdminFromStore', 'deleteAdminFromStore');
+    Route::post('/deleteProductFromStore', 'deleteProductFromStore');
+    Route::post('/updateProduct', 'updateProduct');
+    Route::post('/updateStore', 'updateStore');
+    Route::get('/getAdmins', 'getAdmins');
+    Route::get('/getStore', 'getStore');
+    Route::post('/changeAdmin', 'changeAdmin');
 });
-Route::controller(OrderController::class)->group(function () {
-    Route::post('/createOrder', 'createOrder')->middleware('auth:sanctum');
-    Route::get('/userOrders', 'userOrders')->middleware('auth:sanctum');
-    Route::post('/deleteOrder', 'deleteOrder')->middleware('auth:sanctum');
-    Route::post('/updateOrder', 'updateOrder')->middleware('auth:sanctum');
+Route::controller(OrderController::class)->middleware('auth:sanctum')->group(function () {
+    Route::post('/createOrder', 'createOrder');
+    Route::get('/userOrders', 'userOrders');
+    Route::post('/deleteOrder', 'deleteOrder');
+    Route::post('/updateOrder', 'updateOrder');
 });
 Route::controller(FavoriteController::class)->group(function () {
     Route::post('/addFavorite', 'addFavorite');

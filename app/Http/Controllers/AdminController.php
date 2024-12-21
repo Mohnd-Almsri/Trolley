@@ -20,6 +20,7 @@ class AdminController extends Controller
             'category' => 'required|string|max:255',
             'role' => 'required|string|max:100',
         ]);
+//        if(Admin::where('role','=',auth()->user()->admin()->role))
 
         $category = Category::firstOrCreate(
             ['name' => $request->category],
@@ -74,11 +75,13 @@ class AdminController extends Controller
             'productPrice' => 'required|string|max:255',
             'productQuantity' => 'required|string|max:255',
             ]);
+
         $admin = Admin::where('user_id','=',auth()->user()->id)
             ->where('store_id','=',$request->store_id)->first();
-    if($admin){
+
+        if($admin || (Admin::where('user_id', '=', auth()->user()->id)->where('role', '=', 'Super-Admin')->exists())) {
         Product::create([
-            'store_id' => $admin->store_id,
+            'store_id' => $request->store_id,
             'name' => $request->productName,
             'description'=>$request->productDescription,
             'price'=>$request->productPrice,
@@ -106,7 +109,8 @@ class AdminController extends Controller
             ->where('store_id', $product->store_id)
             ->first();
 
-        if ($admin) {
+        if($admin || (Admin::where('user_id', '=', auth()->user()->id)->where('role', '=', 'Super-Admin')->exists())) {
+
             $product->delete();
 
             return response()->json([
@@ -136,7 +140,9 @@ class AdminController extends Controller
             ->where('store_id', $product->store_id)
             ->first();
 
-        if ($admin) {
+        if($admin || (Admin::where('user_id', '=', auth()->user()->id)->where('role', '=', 'Super-Admin')->exists())) {
+
+
             $product->update([
                 'name' => $request->name,
                 'description' => $request->description,
@@ -157,23 +163,99 @@ class AdminController extends Controller
     }
 
     public function getAdmins(){
+        if (Admin::where('user_id', '=', auth()->user()->id)->where('role', '=', 'Super-Admin')->exists()) {
         $admins = Admin::all();
         return response()->json([
             'status' => 1,
             'admins' => $admins,
+        ]);}
+        return response()->json([
+            'status' => 0,
+            'message' => 'You are not authorized to get admins.',
         ]);
     }
-    public function getProducts(){
-    if(Admin::find(auth()->user()->id)){
-        $products = Product::where('store_id','=',auth()->user()->admin->store_id)->get();
+    public function getStore() {
+        $admin = Admin::where('user_id', auth()->user()->id)->first();
+
+        if ($admin) {
+            if ($admin->role != 'Super-Admin') {
+                $store = Store::where('id', '=', $admin->store_id)
+                    ->with('products')
+                    ->first();
+
+                    return response()->json([
+                        'status' => 1,
+                        'store' => $store,
+                    ]);
+
+            }
+
+            if ($admin->role == 'Super-Admin') {
+                $stores = Store::with('products')->get();
+
+                return response()->json([
+                    'status' => 1,
+                    'Stores' => $stores,
+                ]);
+            }
+        }
+
+        return response()->json([
+            'status' => 0,
+            'message' => 'You are not authorized to get stores.',
+        ]);
+    }
+    public function updateStore(Request $request) {
+    $request->validate([
+            'store_id' => 'required|exists:stores,id',
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:500',
+            'category' => 'required|string|max:255',
+        ]);
+    $admin = Admin::where('user_id','=',auth()->user()->id)
+        ->where('store_id','=',$request->store_id)->first();
+    if($admin || (Admin::where('user_id', '=', auth()->user()->id)->where('role', '=', 'Super-Admin')->exists())) {
+
+
+        $category = Category::firstOrCreate(
+        ['name' => $request->category],
+        ['name' => $request->category] );
+
+        $store = Store::where('id','=',$request->store_id)->update([
+            'category_id' => $category->id,
+            'name'=>$request->name,
+            'description'=>$request->description,
+        ]);
         return response()->json([
             'status' => 1,
-            'products' => $products,
-
+            'message' => 'Store updated successfully.',
         ]);
+
     }
     return response()->json([
         'status' => 0,
-        'message' => 'you are not authorized to view products.']);
+        'message' => 'You are not authorized to update this store.',]);
+    }
+    public function deleteStore(Request $request){}
+    public function changeAdmin(Request $request)
+    {
+        $request->validate([
+            'admin_id' => 'required|exists:admins,id',
+            'user_id' => 'required|exists:users,id',
+        ]);
+        if (Admin::where('user_id', '=', auth()->user()->id)->where('role', '=', 'Super-Admin')->exists()) {
+     Admin::where('id','=',$request->admin_id)->update([
+         'user_id' =>$request->user_id,
+     ]);
+     return response()->json([
+         'status' => 1,
+         'message' => 'Admin updated successfully.',
+     ]);
+        }
+        return response()->json([
+            'status' => 0,
+            'message' => 'You are not authorized to update this admin.',
+        ]);
     }
 }
+

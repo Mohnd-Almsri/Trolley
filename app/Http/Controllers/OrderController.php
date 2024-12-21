@@ -68,7 +68,7 @@ class OrderController extends Controller
             }
             $order->total_price = $totalPrice;
             $order->save();
-;
+
 $this->sendMessage(auth()->user()->phoneNumber, $this->formatOrderToText($order));
 
 
@@ -162,9 +162,6 @@ else
             ]);
         }
     }
-
-
-
     public function DeleteOrder(Request $request)
     {
         $request->validate(['order_id' => 'required|exists:orders,id']);
@@ -214,7 +211,6 @@ else
             ]);
         }
     }
-
     public function UserOrders(){
 return response()->json([
 'status'=>1,
