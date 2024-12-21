@@ -45,12 +45,18 @@ Route::controller(ProductController::class)->group(function () {
 
 Route::controller(AdminController::class)->group(function () {
     Route::post('/addAdminToStore', 'addAdminToStore')->middleware('auth:sanctum');
+    Route::post('/addProductToStore', 'addProductToStore')->middleware('auth:sanctum');
+    Route::post('/deleteAdminFromStore', 'deleteAdminFromStore')->middleware('auth:sanctum');
+    Route::get('/getAdmins', 'getAdmins')->middleware('auth:sanctum');
+    Route::get('/getProducts', 'getProducts')->middleware('auth:sanctum');
+    Route::post('/deleteProductFromStore', 'deleteProductFromStore')->middleware('auth:sanctum');
+    Route::post('/updateProduct', 'updateProduct')->middleware('auth:sanctum');
 });
 Route::controller(OrderController::class)->group(function () {
     Route::post('/createOrder', 'createOrder')->middleware('auth:sanctum');
     Route::get('/userOrders', 'userOrders')->middleware('auth:sanctum');
     Route::post('/deleteOrder', 'deleteOrder')->middleware('auth:sanctum');
-    Route::post('/UpdateOrder', 'UpdateOrder')->middleware('auth:sanctum');
+    Route::post('/updateOrder', 'updateOrder')->middleware('auth:sanctum');
 });
 Route::controller(FavoriteController::class)->group(function () {
     Route::post('/addFavorite', 'addFavorite');

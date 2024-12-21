@@ -101,19 +101,12 @@ $this->sendMessage(auth()->user()->phoneNumber, $this->formatOrderToText($order)
 
         try {
             $order = Order::with('orderItems')->findOrFail($request->order_id);
-if($order->status=='Pending'){
+if($order->status=='pending'){
     foreach ($order->orderItems as $orderItem) {
         Product::where('id', $orderItem->product_id)->increment('quantity', $orderItem->quantity);
     }
 
     $order->orderItems()->delete();
-    $order->delete();
-
-    $newOrder = new Order();
-    $newOrder->id = $order->id;
-    $newOrder->user_id = auth()->user()->id;
-    $newOrder->total_price = 0;
-    $newOrder->save();
 
     $productTable = Product::whereIn('id', collect($request->products)->pluck('product_id'))->get()->keyBy('id');
 
@@ -127,7 +120,7 @@ if($order->status=='Pending'){
             $productData->decrement('quantity', $product['quantity']);
 
             OrderItem::create([
-                'order_id' => $newOrder->id,
+                'order_id' => $order->id,
                 'product_id' => $product['product_id'],
                 'quantity' => $product['quantity'],
                 'total_price' => $product['quantity'] * $productData->price,
@@ -140,16 +133,17 @@ if($order->status=='Pending'){
                 'message' => 'the quantity of product ' . $product['product_id'] . ' is out of stock',]);
         }
     }
+    $order->update([
+        'total_price' => $totalPrice,
 
-    $newOrder->total_price = $totalPrice;
-    $newOrder->save();
+    ]);
 
     DB::commit();
 
     return response()->json([
         'status' => 1,
         'message' => 'the order has been updated',
-        'data' => $newOrder->load('orderItems'),
+        'data' => $order->load('orderItems'),
     ]);
 
 }
