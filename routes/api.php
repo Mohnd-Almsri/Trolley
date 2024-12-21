@@ -11,6 +11,7 @@ use App\Http\Middleware\verificationMiddleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\PasswordController;
+use App\Http\Controllers\SearchController;
 
 Route::controller(PasswordController::class)->group(function () {
    Route::middleware([verificationMiddleware::class])->group(function () {
@@ -36,11 +37,21 @@ Route::post('/verification',  'verification');
 
 });
 Route::controller(StoreController::class)->group(function () {
-    Route::post('/store', 'StoreInfo');
+    Route::get('/storeInfo', 'StoreInfo');
+    Route::get('/StoresForCategory', 'StoresForCategory');
+    Route::post('/addStore', 'addStore');
+//    Route::get('/searchStores', 'searchStores');
 });
 Route::controller(ProductController::class)->group(function () {
-    Route::post('/review', 'addReview');
-    Route::get('getFavoriteProducts', 'getFavoriteProducts');
+    Route::post('/addProduct', 'addProduct');
+    Route::get('/getProductInfo', 'getProductInfo');
+    Route::post('/addReview', 'addReview');
+    Route::get('/getFavoriteProducts', 'getFavoriteProducts');
+//    Route::get('/searchProducts', 'searchProducts');
+});
+
+Route::controller(\App\Http\Controllers\SearchController::class)->group(function () {
+    Route::get('/search', 'search');
 });
 
 Route::controller(AdminController::class)->group(function () {

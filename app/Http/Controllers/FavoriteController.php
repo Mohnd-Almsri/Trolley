@@ -14,7 +14,8 @@ class FavoriteController extends Controller
             'user_id' => 'required|integer|exists:users,id',
             'product_id' => 'required|integer|exists:products,id',
         ]);
-        Favorite::create($request->all());
+        Favorite::firstOrCreate(['user_id'=>$request->user_id,'product_id'=>$request->product_id],$request->all());
+
         return response()->json([
             'status' => 1,
             'message' => 'Favorite added successfully'
