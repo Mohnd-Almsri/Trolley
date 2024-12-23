@@ -86,15 +86,10 @@ class UserController extends Controller
         auth()->user()->update([
             'firstName'=>$request->firstName,
             'lastName'=>$request->lastName]);
-//User::where('id',$id)->update([
-//]);
-return response()->json([
-    'status'=>1,
-    'message'=>'Update Successfully'
-]);
-
-
-
+        return response()->json([
+            'status'=>1,
+            'message'=>'Update Successfully'
+        ]);
     }
     public function ChangePassword(Request $request){
         $request->validate([
@@ -103,7 +98,6 @@ return response()->json([
         ]);
 
         if(Hash::check($request->currentPassword, auth()->user()->password)) {
-
         auth()->user()->update([
            'password'=>$request->newPassword
         ]);
@@ -122,7 +116,6 @@ return response()->json([
 
 
     }
-
     public function logout(){
         auth()->user()->tokens()->delete();
     return response()->json([

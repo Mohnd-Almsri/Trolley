@@ -77,7 +77,7 @@ public function sendMessage($user_phone,$message)
         $message .= "Order ID: {$order->id}\n";
         $message .= "Total Price: \${$order->total_price}\n\n";
         $message .= "Products:\n";
-$i=1;
+        $i=1;
         foreach ($order->orderItems as $orderItem) {
             $product = $orderItem->product;
             $message .= "$i . {$product->name}  ( Quantity: {$orderItem->quantity} , Price: \${$product->price} , Total Price: \${$orderItem->total_price})\n";

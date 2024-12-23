@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedInteger('price');
             $table->unsignedInteger('quantity');
             $table->foreignId('store_id')->constrained('stores');
+            $table->integer('ordered')->default(0);
             $table->float('reviews')->default(0);
             $table->unsignedInteger('reviews_count')->default(0);
             $table->timestamps();
