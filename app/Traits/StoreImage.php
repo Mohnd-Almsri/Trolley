@@ -50,8 +50,9 @@ if ($model) {
                 : null
             )
         );
-
-            $model->update(['image' => $imagePath]);
+if($modelName1=='User')
+    $model->update(['profilePic' => $imagePath]);
+    else        $model->update(['image' => $imagePath]);
 
             return response()->json([
                 'status' => 1,

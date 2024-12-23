@@ -6,13 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterUserRequest;
 use App\Models\User;
 use App\Traits\SendMessageTrait;
+use App\Traits\StoreImage;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    use SendMessageTrait;
+    use SendMessageTrait, StoreImage;
     public function index()
     {
         return User::all();
@@ -122,6 +123,12 @@ return response()->json([
 
 
     }
+
+    public function changeProfileImage(Request $request){
+    return $this->updateImage($request,"User");
+    }
+
+
 
     public function logout(){
         auth()->user()->tokens()->delete();
