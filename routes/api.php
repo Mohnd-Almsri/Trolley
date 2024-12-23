@@ -15,7 +15,7 @@ use App\Http\Controllers\SearchController;
 
 Route::controller(PasswordController::class)->group(function () {
    Route::middleware([verificationMiddleware::class])->group(function () {
-       Route::post('/resetPassword', 'sendCodeChangePassword');
+       Route::post('/sendCodeResetPassword', 'sendCodeChangePassword');
        Route::post('/codeResetPassword',  'checkCodeChangePassword');
             Route::post('/resetPassword','changePassword');
    });
@@ -27,6 +27,8 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/logout',  'logout')->middleware('auth:sanctum');
     Route::post('/login', 'login')->middleware(verificationMiddleware::class);
     Route::post('/update', 'update')->middleware('auth:sanctum');
+    Route::post('/changeProfileImage', 'ChangeProfileImage')->middleware('auth:sanctum');
+    Route::get('/userInfo', 'userInfo')->middleware('auth:sanctum');
     Route::post('/changePassword', 'changePassword')->middleware('auth:sanctum');
 
 });
@@ -61,6 +63,8 @@ Route::controller(AdminController::class)->middleware('auth:sanctum')->group(fun
     Route::post('/deleteProductFromStore', 'deleteProductFromStore');
     Route::post('/updateProduct', 'updateProduct');
     Route::post('/updateStore', 'updateStore');
+    Route::post('/updateStoreImage', 'updateStoreImage');
+    Route::post('/updateProductImage', 'updateProductImage');
     Route::get('/getAdmins', 'getAdmins');
     Route::get('/getStore', 'getStore');
     Route::post('/changeAdmin', 'changeAdmin');

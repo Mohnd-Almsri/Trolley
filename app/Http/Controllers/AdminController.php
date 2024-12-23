@@ -8,9 +8,11 @@ use App\Models\Product;
 use App\Models\Store;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
+use App\Traits\StoreImage;
 
 class AdminController extends Controller
 {
+    use StoreImage;
     public function addAdminToStore(Request $request)
     {
         $request->validate([
@@ -19,6 +21,7 @@ class AdminController extends Controller
             'storeDescription' => 'required|string|max:500',
             'category' => 'required|string|max:255',
             'role' => 'required|string|max:100',
+            'storeImage' => 'required|image',
         ]);
 //        if(Admin::where('role','=',auth()->user()->admin()->role))
 
@@ -31,9 +34,25 @@ class AdminController extends Controller
             ['name'=> $request->storeName]
             ,[ 'name' => $request->storeName,
             'description' => $request->storeDescription,
-            'category_id' => $category->id]);
+            'category_id' => $category->id,
+            'image'=>$request->file('storeImage')->storeAs(
+        'Stores/' .$request->category .'/'. str_replace(' ', '_', $request->storeName),
+        str_replace(' ', '_',$request->storeName)  . '.' . $request->file('storeImage')->getClientOriginalExtension(),
+        'public')
+    ]);
+        $store->update(['image'=>$request->file('storeImage')->storeAs(
+            'Stores/' .$request->category .'/'. str_replace(' ', '_', $request->storeName),
+            str_replace(' ', '_',$request->storeName)  . '.' . $request->file('storeImage')->getClientOriginalExtension(),
+            'public')]);
 
-        Admin::create([
+       $admin =  Admin::where('user_id',$request->user_id)->first();
+if($admin)
+    $admin->update([
+        'user_id' => $request->user_id,
+        'store_id' => $store->id,
+        'role' => $request->role,
+    ]);
+        else Admin::Create([
             'user_id' => $request->user_id,
             'store_id' => $store->id,
             'role' => $request->role,
@@ -42,6 +61,7 @@ class AdminController extends Controller
         return response()->json([
             'status' => 1,
             'message' => 'Admin added successfully.',
+
         ]);
     }
     public function deleteAdminFromStore(Request $request){
@@ -74,19 +94,26 @@ class AdminController extends Controller
             'productDescription' => 'required|string|max:500',
             'productPrice' => 'required|string|max:255',
             'productQuantity' => 'required|string|max:255',
+            'productImage'=>'required|image',
             ]);
 
         $admin = Admin::where('user_id','=',auth()->user()->id)
             ->where('store_id','=',$request->store_id)->first();
 
         if($admin || (Admin::where('user_id', '=', auth()->user()->id)->where('role', '=', 'Super-Admin')->exists())) {
-        Product::create([
+       $product = Product::create([
             'store_id' => $request->store_id,
             'name' => $request->productName,
             'description'=>$request->productDescription,
             'price'=>$request->productPrice,
             'quantity'=> $request->productQuantity
         ]);
+            $imagePath = $request->file('productImage')->storeAs(
+                'Stores/' .$product->store->category->name .'/'. str_replace(' ', '_', $product->Store->name).  '/Products',
+                str_replace(' ', '_', $product->name)  . '.' . $request->file('productImage')->getClientOriginalExtension(),
+                'public'
+            );
+            $product->update(['image' => $imagePath]);
 
         return response()->json([
             'status' => 1,
@@ -161,7 +188,12 @@ class AdminController extends Controller
             'message' => 'You are not authorized to update this product.',
         ]);
     }
-
+public function updateProductImage(Request $request){
+        return $this->updateImage($request,"Product");
+}
+    public function updateStoreImage(Request $request){
+        return $this->updateImage($request,"Store");
+    }
     public function getAdmins(){
         if (Admin::where('user_id', '=', auth()->user()->id)->where('role', '=', 'Super-Admin')->exists()) {
         $admins = Admin::all();

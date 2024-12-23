@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Store extends Model
 {
-protected $fillable = ['name','description','category_id'];
+protected $fillable = ['name','description','category_id','image'];
 public function products(){
     return $this->hasMany(Product::class);
+}
+public function category(){
+    return $this->belongsTo(Category::class);
 }
 
 }

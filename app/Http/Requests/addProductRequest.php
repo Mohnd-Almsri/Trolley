@@ -27,6 +27,7 @@ class addProductRequest extends FormRequest
             'price' => 'required|numeric',
             'quantity' => 'required|numeric',
             'store_id' => 'required|exists:stores,id',
+            'image'=>'required|image',
 
 
         ];

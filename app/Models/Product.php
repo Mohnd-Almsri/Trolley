@@ -11,6 +11,13 @@ class Product extends Model
         'description',
         'price',
         'quantity',
-        'store_id'
+        'store_id',
+        'image'
     ];
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+    public function store(){
+        return $this->belongsTo(Store::class);
+    }
 }

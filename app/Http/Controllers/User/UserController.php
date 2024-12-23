@@ -6,21 +6,27 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterUserRequest;
 use App\Models\User;
 use App\Traits\SendMessageTrait;
+use App\Traits\StoreImage;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    use SendMessageTrait;
+    use SendMessageTrait,StoreImage;
     public function index()
     {
         return User::all();
     }
 
-    public function show($id)
+    public function userInfo()
     {
 
+return request()->json([
+    'status'=>1,
+    'users'=>User::where('id','=',auth()->user()->id)->first()
+
+]);
     }
     public function register(RegisterUserRequest $request){
 
@@ -122,7 +128,11 @@ return response()->json([
 
 
     }
+    public function ChangeProfileImage(Request $request)
+    {
+       return $this->updateImage($request,'Product');
 
+    }
     public function logout(){
         auth()->user()->tokens()->delete();
     return response()->json([
