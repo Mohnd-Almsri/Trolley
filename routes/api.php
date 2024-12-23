@@ -45,7 +45,6 @@ Route::controller(StoreController::class)->group(function () {
 //    Route::get('/searchStores', 'searchStores');
 });
 Route::controller(ProductController::class)->group(function () {
-    Route::post('/addProduct', 'addProduct');
     Route::get('/getProductInfo', 'getProductInfo');
     Route::post('/addReview', 'addReview');
     Route::get('/getFavoriteProducts', 'getFavoriteProducts');

@@ -8,32 +8,13 @@ use App\Models\Comment;
 use App\Models\Product;
 use App\Models\Store;
 use App\Models\User;
-use App\Traits\StoreImage;
-
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    use StoreImage;
-
     public function addProduct(addProductRequest $request)
     {
-       $product = Product::create([
-            'name'=> $request->name,
-            'description' => $request->description,
-            'price'=>$request->price,
-            'quantity'=>$request->quantity,
-            'store_id'=>$request->store_id,
-        ]);
-
-       $imagePath = $request->file('image')->storeAs(
-           'Stores/' .$product->store->category->name .'/'. str_replace(' ', '_', $product->Store->name).  '/Products',
-           str_replace(' ', '_', $product->name)  . '.' . $request->file('image')->getClientOriginalExtension(),
-           'public'
-       );
-        $product->update(['image' => $imagePath]);
-
-
+        Product::create([$request->all()]);
         return response()->json(['message' => 'Product added successfully']);
     }
     public function getProductInfo(request $request)
