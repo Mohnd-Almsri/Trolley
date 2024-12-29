@@ -23,9 +23,6 @@ trait StoreImage
         else
         $model = $modelName::where('id',$request->id)->first();
 
-
-
-
 if ($model) {
     $imageName = str_replace(' ', '_', $model->name);
 
@@ -52,7 +49,8 @@ if ($model) {
         );
 if($modelName1=='User')
     $model->update(['profilePic' => $imagePath]);
-    else        $model->update(['image' => $imagePath]);
+    else
+        $model->update(['image' => $imagePath]);
 
             return response()->json([
                 'status' => 1,

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('product_id')->constrained('products');
             $table->integer('quantity');
             $table->float('total_price');
-            $table->timestamps();;
+            $table->timestamps();
         });
     }
 

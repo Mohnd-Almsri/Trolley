@@ -68,7 +68,7 @@ if($admin)
         $request->validate([
             'admin_id' => 'required|exists:admins,id',
         ]);
-        $superAdmin = Admin::where('role','=','super-admin')->first();
+        $superAdmin = Admin::where('id','=',auth()->user()->id)->where('role','=','Super-Admin')->first();
         if($superAdmin){
             if($superAdmin->id!=$request->admin_id){
 

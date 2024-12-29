@@ -87,8 +87,7 @@ class UserController extends Controller
         auth()->user()->update([
             'firstName'=>$request->firstName,
             'lastName'=>$request->lastName]);
-//User::where('id',$id)->update([
-//]);
+
 return response()->json([
     'status'=>1,
     'message'=>'Update Successfully'
@@ -127,8 +126,6 @@ return response()->json([
     public function changeProfileImage(Request $request){
     return $this->updateImage($request,"User");
     }
-
-
 
     public function logout(){
         auth()->user()->tokens()->delete();

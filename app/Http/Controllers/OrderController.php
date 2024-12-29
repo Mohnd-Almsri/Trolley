@@ -214,9 +214,8 @@ else
     }
     public function UserOrders(){
 return response()->json([
-'status'=>1,
-    'data'=>  auth()->user()->load('order.orderItems')
-
+                     'status'=>1,
+                     'data'=>  auth()->user()->load('order.orderItems')
     ]);
 
 
