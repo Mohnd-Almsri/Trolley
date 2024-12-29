@@ -29,6 +29,7 @@ public function sendMessage($user_phone,$message)
 
     $params = [
         'token' => 'tp5y8x1r00h7ravq',
+//        'to' => $user_phone,
         'to' => "+963".substr($user_phone,-9),
         'body' => $message
     ];
@@ -72,7 +73,7 @@ public function sendMessage($user_phone,$message)
 
         $userName = $order->user->firstName . ' ' . $order->user->lastName;
 
-        $message = "Hello {$userName},\n\n";
+        $message = "Hello {$userName},\n";
         $message .= "Thank you for your order! Here are the details:\n\n";
         $message .= "Order ID: {$order->id}\n";
         $message .= "Total Price: \${$order->total_price}\n\n";

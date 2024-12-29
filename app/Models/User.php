@@ -23,7 +23,6 @@ class User extends Authenticatable
         'phoneNumber',
         'location',
         'password',
-        'verification_code',
         'profilePic'
 
     ];
@@ -37,6 +36,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'verification_code',
+        'number_verification',
+        'passwordReset',
+        'verification_code_expires_at',
+        'created_at',
+        'updated_at'
+
+
     ];
     public function favorites(){
         return $this->belongsToMany(Product::class,'favorites','user_id','product_id');

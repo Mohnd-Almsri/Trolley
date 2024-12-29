@@ -19,9 +19,11 @@ class UserController extends Controller
         return User::all();
     }
 
-    public function show($id)
+    public function userInfo()
     {
-
+return response()->json([
+    'status'=> 1,
+    'data'=>auth()->user()]);
     }
     public function register(RegisterUserRequest $request){
 

@@ -36,8 +36,7 @@ class OrderController extends Controller
             $productTable = Product::whereIn('id', $productIds)->get()->keyBy('id');
 
             foreach ($request->products as $product) {
-                $product->ordered+=1;
-                $product->save();
+
                 $currentProduct = $productTable->get($product['product_id']);
 
                 if ($currentProduct) {

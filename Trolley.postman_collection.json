@@ -7,62 +7,11 @@
 	},
 	"item": [
 		{
-			"name": "Register",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "firstName",
-							"value": "المعلم ",
-							"type": "text"
-						},
-						{
-							"key": "lastName",
-							"value": "الكبير",
-							"type": "text"
-						},
-						{
-							"key": "phoneNumber",
-							"value": "0997393611",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "123123123",
-							"type": "text"
-						},
-						{
-							"key": "location",
-							"value": "damascus,bahdad-street",
-							"type": "text"
-						},
-						{
-							"key": "password_confirmation",
-							"value": "123123123",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/register"
-			},
-			"response": [
+			"name": "login & register",
+			"item": [
 				{
-					"name": "success",
-					"originalRequest": {
+					"name": "Register",
+					"request": {
 						"method": "POST",
 						"header": [
 							{
@@ -81,12 +30,12 @@
 							"formdata": [
 								{
 									"key": "firstName",
-									"value": "المعلم ",
+									"value": "mohnd",
 									"type": "text"
 								},
 								{
 									"key": "lastName",
-									"value": "الكبير",
+									"value": "ibrahem",
 									"type": "text"
 								},
 								{
@@ -113,45 +62,285 @@
 						},
 						"url": "http://127.0.0.1:8000/api/register"
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "firstName",
+											"value": "المعلم ",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "الكبير",
+											"type": "text"
+										},
+										{
+											"key": "phoneNumber",
+											"value": "0997393611",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123123123",
+											"type": "text"
+										},
+										{
+											"key": "location",
+											"value": "damascus,bahdad-street",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "123123123",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/register"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 21:24:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"firstName\": \"المعلم\",\n        \"lastName\": \"الكبير\",\n        \"phoneNumber\": \"0997393611\",\n        \"location\": \"damascus,bahdad-street\",\n        \"updated_at\": \"2024-11-30T21:24:41.000000Z\",\n        \"created_at\": \"2024-11-30T21:24:41.000000Z\",\n        \"id\": 1\n    },\n    \"code\": 312050\n}"
 						},
 						{
-							"key": "Connection",
-							"value": "close"
+							"name": "required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "firstName",
+											"value": "المعلم ",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "lastName",
+											"value": "الكبير",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "phoneNumber",
+											"value": "0997393611",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "123123123",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "location",
+											"value": "damascus,bahdad-street",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password_confirmation",
+											"value": "123123123",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/register"
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 21:25:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The first name field is required. (and 4 more errors)\",\n    \"errors\": {\n        \"firstName\": [\n            \"The first name field is required.\"\n        ],\n        \"lastName\": [\n            \"The last name field is required.\"\n        ],\n        \"phoneNumber\": [\n            \"The phone number field is required.\"\n        ],\n        \"password\": [\n            \"The password field is required.\"\n        ],\n        \"location\": [\n            \"The location field is required.\"\n        ]\n    }\n}"
 						},
 						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:24:43 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
+							"name": "unique Number",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "firstName",
+											"value": "المعلم ",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "الكبير",
+											"type": "text"
+										},
+										{
+											"key": "phoneNumber",
+											"value": "0997393611",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123123123",
+											"type": "text"
+										},
+										{
+											"key": "location",
+											"value": "damascus,bahdad-street",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "123123123",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/register"
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 21:26:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The phone number has already been taken.\",\n    \"errors\": {\n        \"phoneNumber\": [\n            \"The phone number has already been taken.\"\n        ]\n    }\n}"
 						}
-					],
-					"cookie": [],
-					"body": "{\n    \"user\": {\n        \"firstName\": \"المعلم\",\n        \"lastName\": \"الكبير\",\n        \"phoneNumber\": \"0997393611\",\n        \"location\": \"damascus,bahdad-street\",\n        \"updated_at\": \"2024-11-30T21:24:41.000000Z\",\n        \"created_at\": \"2024-11-30T21:24:41.000000Z\",\n        \"id\": 1\n    },\n    \"code\": 312050\n}"
+					]
 				},
 				{
-					"name": "required",
-					"originalRequest": {
+					"name": "Verification Code",
+					"request": {
 						"method": "POST",
 						"header": [
 							{
@@ -163,6 +352,1953 @@
 								"key": "Accept",
 								"value": "application/json",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "927940",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/verification"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "958011",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/verification"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 20:21:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Code Verified Successfully\"\n}"
+						},
+						{
+							"name": "required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "code",
+											"value": "958011",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/verification"
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 21:28:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The user id field is required. (and 1 more error)\",\n    \"errors\": {\n        \"user_id\": [\n            \"The user id field is required.\"\n        ],\n        \"code\": [\n            \"The code field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "register number require",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "958011",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/verification"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 21:32:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"failed\",\n    \"message\": \"Phone Number Not Registered\"\n}"
+						},
+						{
+							"name": "incorrect code",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "958011",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/verification"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 21:33:57 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"failed\",\n    \"message\": \"Code  is incorrect\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phoneNumber",
+									"value": "0997393611",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/login"
+					},
+					"response": [
+						{
+							"name": "verify is required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phoneNumber",
+											"value": "0997393611",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234567890",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/login"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 21:34:56 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"0\",\n    \"message\": \"your phone number did not verify\"\n}"
+						},
+						{
+							"name": "incorrect password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phoneNumber",
+											"value": "0997393611",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234567890",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/login"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 21:36:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 0,\n    \"message\": \"password did not match\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phoneNumber",
+											"value": "0997393611",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123123123",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/login"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 21:37:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"message\": \"Login Successfully\",\n    \"verified At\": \"2024-11-30 21:36:21\",\n    \"token\": \"1|RTDDrrnZ4Xcp4BqSXEe8Xf9VGxAFrzRBKt5ZTTCaa2efc429\"\n}"
+						},
+						{
+							"name": "register number require",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phoneNumber",
+											"value": "099739361",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123123123",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/login"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 21:37:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"0\",\n    \"message\": \"Phone Number Not Registered\"\n}"
+						}
+					]
+				},
+				{
+					"name": "sendCodeResetPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phoneNumber",
+									"value": "0997393611",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/sendCodeResetPassword"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phoneNumber",
+											"value": "0997393611",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/resetPassword"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 20:44:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"1\",\n    \"code\": 589181\n}"
+						},
+						{
+							"name": "register number require",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phoneNumber",
+											"value": "099739361",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/resetPassword"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 21:42:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"0\",\n    \"message\": \"Phone Number Not Registered\"\n}"
+						}
+					]
+				},
+				{
+					"name": "code reset password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phoneNumber",
+									"value": "0997393611",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "487081",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/codeResetPassword"
+					},
+					"response": [
+						{
+							"name": "must verify",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phoneNumber",
+											"value": "0997393611",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "115703",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/codeResetPassword"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 21:19:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"failed\",\n    \"message\": \"Code  did not verify\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phoneNumber",
+											"value": "0997393611",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "115703",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/codeResetPassword"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 21:44:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Code Verified Successfully\"\n}"
+						},
+						{
+							"name": "incorrect code",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phoneNumber",
+											"value": "0997393611",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "115702",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/codeResetPassword"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 21:45:57 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"failed\",\n    \"message\": \"Code is incorrect\"\n}"
+						},
+						{
+							"name": "register number require",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phoneNumber",
+											"value": "0997393612",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "115703",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/codeResetPassword"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 21:46:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"0\",\n    \"message\": \"Phone Number Not Registered\"\n}"
+						}
+					]
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phoneNumber",
+									"value": "0997393611",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123123123",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/resetPassword"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phoneNumber",
+											"value": "0997393611",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234567890",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "1234567890",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/changePassword"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 20:45:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"message\": \"Password Changed Successfully\"\n}"
+						},
+						{
+							"name": "register number require",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phoneNumber",
+											"value": "099739361",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234567890",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "1234567890",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/changePassword"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 21:47:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"0\",\n    \"message\": \"Phone Number Not Registered\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "change profile image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1efc10bb-c25f-4560-80a9-aa60f6361781"
+								},
+								{
+									"key": "id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/changeProfileImage"
+					},
+					"response": [
+						{
+							"name": "requier",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1efc10bb-c25f-4560-80a9-aa60f6361781",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/changeProfileImage"
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Dec 2024 17:14:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The image field is required.\",\n    \"errors\": {\n        \"image\": [\n            \"The image field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1efc10bb-c25f-4560-80a9-aa60f6361781"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/changeProfileImage"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Dec 2024 17:15:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"message\": \"Image uploaded and updated successfully.\",\n    \"image_path\": \"Users/2.png\"\n}"
+						}
+					]
+				},
+				{
+					"name": "user information",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phoneNumber",
+									"value": "0997393611",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/userInfo"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phoneNumber",
+											"value": "0997393611",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/userInfo"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Dec 2024 17:55:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"data\": {\n        \"id\": 2,\n        \"firstName\": \"Raed\",\n        \"lastName\": \"MK\",\n        \"phoneNumber\": \"+963988127839\",\n        \"location\": \"damascus,bahdad-street\",\n        \"profilePic\": \"Users/2.png\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "changePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|AAwM9B0b6PlwKv8rCX0p8CcGqpKIUuFwzDFTR6xR74044172"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "currentPassword",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "1234567890",
+									"type": "text"
+								},
+								{
+									"key": "newPassword_confirmation",
+									"value": "1234567890",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/changePassword"
+					},
+					"response": [
+						{
+							"name": "required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "currentPassword",
+											"value": "123123123",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "newPassword",
+											"value": "1234567890",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "newPassword_confirmation",
+											"value": "1234567890",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/changePassword"
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Dec 2024 17:56:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The current password field is required. (and 1 more error)\",\n    \"errors\": {\n        \"currentPassword\": [\n            \"The current password field is required.\"\n        ],\n        \"newPassword\": [\n            \"The new password field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "current password wrong",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "currentPassword",
+											"value": "12312312",
+											"type": "text"
+										},
+										{
+											"key": "newPassword",
+											"value": "123123123",
+											"type": "text"
+										},
+										{
+											"key": "newPassword_confirmation",
+											"value": "123123123",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/changePassword"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Dec 2024 17:56:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 0,\n    \"message\": \"Current Password Not Match\"\n}"
+						},
+						{
+							"name": "new password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "currentPassword",
+											"value": "123123123",
+											"type": "text"
+										},
+										{
+											"key": "newPassword",
+											"value": "12312312",
+											"type": "text"
+										},
+										{
+											"key": "newPassword_confirmation",
+											"value": "123123123",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/changePassword"
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Dec 2024 17:57:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The new password field confirmation does not match.\",\n    \"errors\": {\n        \"newPassword\": [\n            \"The new password field confirmation does not match.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "currentPassword",
+											"value": "123123123",
+											"type": "text"
+										},
+										{
+											"key": "newPassword",
+											"value": "123123123",
+											"type": "text"
+										},
+										{
+											"key": "newPassword_confirmation",
+											"value": "123123123",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/changePassword"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Dec 2024 17:58:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"message\": \"Password Changed Successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "change name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|AAwM9B0b6PlwKv8rCX0p8CcGqpKIUuFwzDFTR6xR74044172"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -170,83 +2306,1562 @@
 							"formdata": [
 								{
 									"key": "firstName",
-									"value": "المعلم ",
-									"type": "text",
-									"disabled": true
+									"value": "mohnd",
+									"type": "text"
 								},
 								{
 									"key": "lastName",
-									"value": "الكبير",
-									"type": "text",
-									"disabled": true
+									"value": "ibrahem",
+									"type": "text"
 								},
 								{
-									"key": "phoneNumber",
-									"value": "0997393611",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "password",
-									"value": "123123123",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "location",
-									"value": "damascus,bahdad-street",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "password_confirmation",
-									"value": "123123123",
+									"key": "",
+									"value": "",
 									"type": "text",
 									"disabled": true
 								}
 							]
 						},
-						"url": "http://127.0.0.1:8000/api/register"
+						"url": "http://127.0.0.1:8000/api/update"
 					},
-					"status": "Unprocessable Content",
-					"code": 422,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
+							"name": "required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "firstName",
+											"value": "mohnd",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "lastName",
+											"value": "ibrahem",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/update"
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Dec 2024 17:58:57 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The first name field is required. (and 1 more error)\",\n    \"errors\": {\n        \"firstName\": [\n            \"The first name field is required.\"\n        ],\n        \"lastName\": [\n            \"The last name field is required.\"\n        ]\n    }\n}"
 						},
 						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:25:37 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "firstName",
+											"value": "mohnd",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "ibrahem",
+											"type": "text"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/update"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Dec 2024 17:59:20 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"message\": \"Update Successfully\"\n}"
 						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"The first name field is required. (and 4 more errors)\",\n    \"errors\": {\n        \"firstName\": [\n            \"The first name field is required.\"\n        ],\n        \"lastName\": [\n            \"The last name field is required.\"\n        ],\n        \"phoneNumber\": [\n            \"The phone number field is required.\"\n        ],\n        \"password\": [\n            \"The password field is required.\"\n        ],\n        \"location\": [\n            \"The location field is required.\"\n        ]\n    }\n}"
+					]
+				}
+			]
+		},
+		{
+			"name": "Admins Store",
+			"item": [
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "add product to store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "store_id",
+											"value": "3",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "productName",
+											"value": "flower",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "productDescription",
+											"value": "asdasdasdasd",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "productPrice",
+											"value": "3",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "productQuantity",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "productImage",
+											"type": "file",
+											"src": "postman-cloud:///1efc1184-2d7a-47a0-add0-73a56f58faf5",
+											"disabled": true
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/addProductToStore"
+							},
+							"response": [
+								{
+									"name": "not authorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "store_id",
+													"value": "3",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "productName",
+													"value": "flower",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "productDescription",
+													"value": "asdasdasdasd",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "productPrice",
+													"value": "3",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "productQuantity",
+													"value": "100",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "productImage",
+													"type": "file",
+													"src": "postman-cloud:///1efc1184-2d7a-47a0-add0-73a56f58faf5",
+													"disabled": true
+												}
+											]
+										},
+										"url": "http://127.0.0.1:8000/api/addProductToStore"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 29 Dec 2024 19:24:32 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 0,\n    \"message\": \"You are not authorized to do this action.\"\n}"
+								},
+								{
+									"name": "required",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "store_id",
+													"value": "3",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "productName",
+													"value": "flower",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "productDescription",
+													"value": "asdasdasdasd",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "productPrice",
+													"value": "3",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "productQuantity",
+													"value": "100",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "productImage",
+													"type": "file",
+													"src": "postman-cloud:///1efc1184-2d7a-47a0-add0-73a56f58faf5",
+													"disabled": true
+												}
+											]
+										},
+										"url": "http://127.0.0.1:8000/api/addProductToStore"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 29 Dec 2024 19:27:41 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"The store id field is required. (and 5 more errors)\",\n    \"errors\": {\n        \"store_id\": [\n            \"The store id field is required.\"\n        ],\n        \"productName\": [\n            \"The product name field is required.\"\n        ],\n        \"productDescription\": [\n            \"The product description field is required.\"\n        ],\n        \"productPrice\": [\n            \"The product price field is required.\"\n        ],\n        \"productQuantity\": [\n            \"The product quantity field is required.\"\n        ],\n        \"productImage\": [\n            \"The product image field is required.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "store_id",
+													"value": "6",
+													"type": "text"
+												},
+												{
+													"key": "productName",
+													"value": "flower",
+													"type": "text"
+												},
+												{
+													"key": "productDescription",
+													"value": "asdasdasdasd",
+													"type": "text"
+												},
+												{
+													"key": "productPrice",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "productQuantity",
+													"value": "100",
+													"type": "text"
+												},
+												{
+													"key": "productImage",
+													"type": "file",
+													"src": "postman-cloud:///1efc1184-2d7a-47a0-add0-73a56f58faf5"
+												}
+											]
+										},
+										"url": "http://127.0.0.1:8000/api/addProductToStore"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 29 Dec 2024 19:30:39 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 1,\n    \"message\": \"Product added successfully.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "delete product from store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "product_id",
+											"value": "4",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "lastName",
+											"value": "ibrahem",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/deleteProductFromStore"
+							},
+							"response": [
+								{
+									"name": "required",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "product_id",
+													"value": "4",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "lastName",
+													"value": "ibrahem",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": "http://127.0.0.1:8000/api/deleteProductFromStore"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 29 Dec 2024 19:31:27 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"The product id field is required.\",\n    \"errors\": {\n        \"product_id\": [\n            \"The product id field is required.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "you are not the admin who has access to this store",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "product_id",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": "http://127.0.0.1:8000/api/deleteProductFromStore"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 29 Dec 2024 19:33:54 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 0,\n    \"message\": \"You are not authorized to delete this product because you are not the admin who has access to this store.\"\n}"
+								},
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "product_id",
+													"value": "6",
+													"type": "text"
+												},
+												{
+													"key": "",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": "http://127.0.0.1:8000/api/deleteProductFromStore"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 29 Dec 2024 19:36:45 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 1,\n    \"message\": \"Product deleted successfully.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "update Product by admin",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "product_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "condom",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "it is perfect to save your life away from the hell",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "0.99",
+											"type": "text"
+										},
+										{
+											"key": "quantity",
+											"value": "100",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/updateProduct"
+							},
+							"response": [
+								{
+									"name": "required",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "product_id",
+													"value": "5",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "name",
+													"value": "condom",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "description",
+													"value": "it is perfect to save your life away from the hell",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "price",
+													"value": "0.99",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "quantity",
+													"value": "100",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": "http://127.0.0.1:8000/api/updateProduct"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 29 Dec 2024 19:38:48 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"The product id field is required. (and 4 more errors)\",\n    \"errors\": {\n        \"product_id\": [\n            \"The product id field is required.\"\n        ],\n        \"name\": [\n            \"The name field is required.\"\n        ],\n        \"description\": [\n            \"The description field is required.\"\n        ],\n        \"price\": [\n            \"The price field is required.\"\n        ],\n        \"quantity\": [\n            \"The quantity field is required.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "you are not the admin who has access to this product",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "product_id",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "condom",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "it is perfect to save your life away from the hell",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "0.99",
+													"type": "text"
+												},
+												{
+													"key": "quantity",
+													"value": "100",
+													"type": "text"
+												}
+											]
+										},
+										"url": "http://127.0.0.1:8000/api/updateProduct"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 29 Dec 2024 19:39:11 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 0,\n    \"message\": \"You are not authorized to update this product.\"\n}"
+								},
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "product_id",
+													"value": "4",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "condom",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "it is perfect to save your life away from the hell",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "0.99",
+													"type": "text"
+												},
+												{
+													"key": "quantity",
+													"value": "100",
+													"type": "text"
+												}
+											]
+										},
+										"url": "http://127.0.0.1:8000/api/updateProduct"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 29 Dec 2024 19:39:52 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 1,\n    \"message\": \"Product updated successfully.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "get store Products",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{token}}"
+									}
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "firstName",
+											"value": "mohnd",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "lastName",
+											"value": "ibrahem",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/getStore"
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "firstName",
+													"value": "mohnd",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "lastName",
+													"value": "ibrahem",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": "http://127.0.0.1:8000/api/getStore"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 29 Dec 2024 19:40:17 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 1,\n    \"store\": {\n        \"id\": 6,\n        \"name\": \"3boda laptop\",\n        \"description\": \"asfasdfsf\",\n        \"reviews\": 0,\n        \"image\": null,\n        \"reviews_count\": 0,\n        \"category_id\": 2,\n        \"created_at\": null,\n        \"updated_at\": null,\n        \"products\": [\n            {\n                \"id\": 3,\n                \"name\": \"Iphone 16 pro max\",\n                \"description\": \"asdAD\",\n                \"price\": 111,\n                \"quantity\": 1204,\n                \"image\": null,\n                \"store_id\": 6,\n                \"ordered\": 0,\n                \"reviews\": 0,\n                \"reviews_count\": 0,\n                \"created_at\": null,\n                \"updated_at\": \"2024-12-29T17:00:51.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"condom\",\n                \"description\": \"it is perfect to save your life away from the hell\",\n                \"price\": 1,\n                \"quantity\": 100,\n                \"image\": null,\n                \"store_id\": 6,\n                \"ordered\": 0,\n                \"reviews\": 0,\n                \"reviews_count\": 0,\n                \"created_at\": null,\n                \"updated_at\": \"2024-12-29T19:39:52.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"flower\",\n                \"description\": \"asdasdasdasd\",\n                \"price\": 3,\n                \"quantity\": 100,\n                \"image\": null,\n                \"store_id\": 6,\n                \"ordered\": 0,\n                \"reviews\": 0,\n                \"reviews_count\": 0,\n                \"created_at\": \"2024-12-29T19:28:29.000000Z\",\n                \"updated_at\": \"2024-12-29T19:28:29.000000Z\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "change image product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1efc10bb-c25f-4560-80a9-aa60f6361781"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "quantity",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/updateProductImage"
+							},
+							"response": []
+						}
+					]
 				},
 				{
-					"name": "unique Number",
-					"originalRequest": {
+					"name": "Store",
+					"item": [
+						{
+							"name": "update store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "store_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "condom",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "it is perfect to save your life away from the hell",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "electronic",
+											"type": "text"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/updateStore"
+							},
+							"response": []
+						},
+						{
+							"name": "update store Image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1efc10bb-c25f-4560-80a9-aa60f6361781"
+										},
+										{
+											"key": "description",
+											"value": "it is perfect to save your life away from the hell",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "price",
+											"value": "0.99",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "quantity",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/updateStoreImage"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "add admin to store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -258,6 +3873,136 @@
 								"key": "Accept",
 								"value": "application/json",
 								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "Admin",
+									"type": "text"
+								},
+								{
+									"key": "storeName",
+									"value": "laptop king",
+									"type": "text"
+								},
+								{
+									"key": "storeDescription",
+									"value": "electronic",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "bebe",
+									"type": "text"
+								},
+								{
+									"key": "storeImage",
+									"type": "file",
+									"src": "postman-cloud:///1efc1184-2d7a-47a0-add0-73a56f58faf5"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/addAdminToStore"
+					},
+					"response": []
+				},
+				{
+					"name": "delete admin from store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "admin_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/deleteAdminFromStore"
+					},
+					"response": []
+				},
+				{
+					"name": "get All Admins",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -265,254 +4010,237 @@
 							"formdata": [
 								{
 									"key": "firstName",
-									"value": "المعلم ",
+									"value": "mohnd",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "lastName",
+									"value": "ibrahem",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/getAdmins"
+					},
+					"response": []
+				},
+				{
+					"name": "change admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "admin_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/changeAdmin"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "create order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \r\n  \"products\": [\r\n    {\r\n      \"product_id\": 5,\r\n      \"quantity\": 2\r\n    },\r\n    {\r\n      \"product_id\": 7,\r\n      \"quantity\": 3\r\n    },\r\n    {\r\n      \"product_id\": 8,\r\n      \"quantity\": 4\r\n    }\r\n   \r\n  ]\r\n}"
+						},
+						"url": "http://127.0.0.1:8000/api/createOrder"
+					},
+					"response": []
+				},
+				{
+					"name": "update order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"order_id\": 37,\r\n  \"products\": [\r\n    {\r\n      \"product_id\": 5,\r\n      \"quantity\": 1\r\n    }\r\n    ,\r\n    {\r\n      \"product_id\": 7,\r\n      \"quantity\": 10\r\n    }\r\n    ,\r\n    {\r\n      \"product_id\": 8,\r\n      \"quantity\": 10\r\n    }\r\n    ,{\r\n      \"product_id\": 9,\r\n      \"quantity\": 1\r\n    }\r\n  ]\r\n}"
+						},
+						"url": "http://127.0.0.1:8000/api/updateOrder"
+					},
+					"response": []
+				},
+				{
+					"name": "delete order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "order_id",
+									"value": "19",
 									"type": "text"
 								},
 								{
 									"key": "lastName",
-									"value": "الكبير",
-									"type": "text"
-								},
-								{
-									"key": "phoneNumber",
-									"value": "0997393611",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "123123123",
-									"type": "text"
-								},
-								{
-									"key": "location",
-									"value": "damascus,bahdad-street",
-									"type": "text"
-								},
-								{
-									"key": "password_confirmation",
-									"value": "123123123",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/register"
-					},
-					"status": "Unprocessable Content",
-					"code": 422,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:26:05 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"The phone number has already been taken.\",\n    \"errors\": {\n        \"phoneNumber\": [\n            \"The phone number has already been taken.\"\n        ]\n    }\n}"
-				}
-			]
-		},
-		{
-			"name": "Verification Code",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "user_id",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "code",
-							"value": "958011",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/verification"
-			},
-			"response": [
-				{
-					"name": "success",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "user_id",
-									"value": "1",
-									"type": "text"
-								},
-								{
-									"key": "code",
-									"value": "958011",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/verification"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 20:21:31 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Code Verified Successfully\"\n}"
-				},
-				{
-					"name": "required",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "user_id",
-									"value": "1",
+									"value": "ibrahem",
 									"type": "text",
 									"disabled": true
 								},
 								{
-									"key": "code",
-									"value": "958011",
+									"key": "",
+									"value": "",
 									"type": "text",
 									"disabled": true
 								}
 							]
 						},
-						"url": "http://127.0.0.1:8000/api/verification"
+						"url": "http://127.0.0.1:8000/api/deleteOrder"
 					},
-					"status": "Unprocessable Content",
-					"code": 422,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:28:26 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"The user id field is required. (and 1 more error)\",\n    \"errors\": {\n        \"user_id\": [\n            \"The user id field is required.\"\n        ],\n        \"code\": [\n            \"The code field is required.\"\n        ]\n    }\n}"
+					"response": []
 				},
 				{
-					"name": "register number require",
-					"originalRequest": {
-						"method": "POST",
+					"name": "user orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -523,2508 +4251,23 @@
 								"key": "Accept",
 								"value": "application/json",
 								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "user_id",
-									"value": "4",
-									"type": "text"
-								},
-								{
-									"key": "code",
-									"value": "958011",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/verification"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:32:55 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"failed\",\n    \"message\": \"Phone Number Not Registered\"\n}"
-				},
-				{
-					"name": "incorrect code",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
 							},
 							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "user_id",
-									"value": "1",
-									"type": "text"
-								},
-								{
-									"key": "code",
-									"value": "958011",
-									"type": "text"
-								}
-							]
+							"mode": "raw",
+							"raw": ""
 						},
-						"url": "http://127.0.0.1:8000/api/verification"
+						"url": "http://127.0.0.1:8000/api/userOrders"
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:33:57 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"failed\",\n    \"message\": \"Code  is incorrect\"\n}"
+					"response": []
 				}
 			]
-		},
-		{
-			"name": "Login",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "phoneNumber",
-							"value": "0997393611",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "1234567890",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/login"
-			},
-			"response": [
-				{
-					"name": "verify is required",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "0997393611",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "1234567890",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/login"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:34:56 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"0\",\n    \"message\": \"your phone number did not verify\"\n}"
-				},
-				{
-					"name": "incorrect password",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "0997393611",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "1234567890",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/login"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:36:36 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": 0,\n    \"message\": \"password did not match\"\n}"
-				},
-				{
-					"name": "success",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "0997393611",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "123123123",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/login"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:37:16 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": 1,\n    \"message\": \"Login Successfully\",\n    \"verified At\": \"2024-11-30 21:36:21\",\n    \"token\": \"1|RTDDrrnZ4Xcp4BqSXEe8Xf9VGxAFrzRBKt5ZTTCaa2efc429\"\n}"
-				},
-				{
-					"name": "register number require",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "099739361",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "123123123",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/login"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:37:33 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"0\",\n    \"message\": \"Phone Number Not Registered\"\n}"
-				}
-			]
-		},
-		{
-			"name": "sendCodeResetPassword",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "phoneNumber",
-							"value": "0997393611",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/resetPassword"
-			},
-			"response": [
-				{
-					"name": "success",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "0997393611",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/resetPassword"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 20:44:08 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"1\",\n    \"code\": 589181\n}"
-				},
-				{
-					"name": "register number require",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "099739361",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/resetPassword"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:42:16 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"0\",\n    \"message\": \"Phone Number Not Registered\"\n}"
-				}
-			]
-		},
-		{
-			"name": "change profile image",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "phoneNumber",
-							"value": "0997393611",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/resetPassword"
-			},
-			"response": [
-				{
-					"name": "success",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "0997393611",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/resetPassword"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 20:44:08 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"1\",\n    \"code\": 589181\n}"
-				},
-				{
-					"name": "register number require",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "099739361",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/resetPassword"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:42:16 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"0\",\n    \"message\": \"Phone Number Not Registered\"\n}"
-				}
-			]
-		},
-		{
-			"name": "user information",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "{{token}}"
-					}
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "phoneNumber",
-							"value": "0997393611",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/userInfo"
-			},
-			"response": [
-				{
-					"name": "success",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "0997393611",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/resetPassword"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 20:44:08 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"1\",\n    \"code\": 589181\n}"
-				},
-				{
-					"name": "register number require",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "099739361",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/resetPassword"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:42:16 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"0\",\n    \"message\": \"Phone Number Not Registered\"\n}"
-				}
-			]
-		},
-		{
-			"name": "code reset password",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "phoneNumber",
-							"value": "0997393611",
-							"type": "text"
-						},
-						{
-							"key": "code",
-							"value": "115703",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/codeResetPassword"
-			},
-			"response": [
-				{
-					"name": "must verify",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "0997393611",
-									"type": "text"
-								},
-								{
-									"key": "code",
-									"value": "115703",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/codeResetPassword"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:19:28 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"failed\",\n    \"message\": \"Code  did not verify\"\n}"
-				},
-				{
-					"name": "success",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "0997393611",
-									"type": "text"
-								},
-								{
-									"key": "code",
-									"value": "115703",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/codeResetPassword"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:44:59 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Code Verified Successfully\"\n}"
-				},
-				{
-					"name": "incorrect code",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "0997393611",
-									"type": "text"
-								},
-								{
-									"key": "code",
-									"value": "115702",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/codeResetPassword"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:45:57 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"failed\",\n    \"message\": \"Code is incorrect\"\n}"
-				},
-				{
-					"name": "register number require",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "0997393612",
-									"type": "text"
-								},
-								{
-									"key": "code",
-									"value": "115703",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/codeResetPassword"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:46:27 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"0\",\n    \"message\": \"Phone Number Not Registered\"\n}"
-				}
-			]
-		},
-		{
-			"name": "reset password",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "phoneNumber",
-							"value": "0997393611",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "123123123",
-							"type": "text"
-						},
-						{
-							"key": "password_confirmation",
-							"value": "123123123",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/resetPassword"
-			},
-			"response": [
-				{
-					"name": "success",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "0997393611",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "1234567890",
-									"type": "text"
-								},
-								{
-									"key": "password_confirmation",
-									"value": "1234567890",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/changePassword"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 20:45:59 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": 1,\n    \"message\": \"Password Changed Successfully\"\n}"
-				},
-				{
-					"name": "register number require",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "099739361",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "1234567890",
-									"type": "text"
-								},
-								{
-									"key": "password_confirmation",
-									"value": "1234567890",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/changePassword"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:47:16 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"0\",\n    \"message\": \"Phone Number Not Registered\"\n}"
-				}
-			]
-		},
-		{
-			"name": "changePassword",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "phoneNumber",
-							"value": "0997393611",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "1234567890",
-							"type": "text"
-						},
-						{
-							"key": "password_confirmation",
-							"value": "1234567890",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/changePassword"
-			},
-			"response": [
-				{
-					"name": "success",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "0997393611",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "1234567890",
-									"type": "text"
-								},
-								{
-									"key": "password_confirmation",
-									"value": "1234567890",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/changePassword"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 20:45:59 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": 1,\n    \"message\": \"Password Changed Successfully\"\n}"
-				},
-				{
-					"name": "register number require",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phoneNumber",
-									"value": "099739361",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "1234567890",
-									"type": "text"
-								},
-								{
-									"key": "password_confirmation",
-									"value": "1234567890",
-									"type": "text"
-								}
-							]
-						},
-						"url": "http://127.0.0.1:8000/api/changePassword"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.2.12"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 30 Nov 2024 21:47:16 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": \"0\",\n    \"message\": \"Phone Number Not Registered\"\n}"
-				}
-			]
-		},
-		{
-			"name": "update",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "1|AAwM9B0b6PlwKv8rCX0p8CcGqpKIUuFwzDFTR6xR74044172"
-					}
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "firstName",
-							"value": "mohnd",
-							"type": "text"
-						},
-						{
-							"key": "lastName",
-							"value": "ibrahem",
-							"type": "text"
-						},
-						{
-							"key": "",
-							"value": "",
-							"type": "text",
-							"disabled": true
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/update"
-			},
-			"response": []
-		},
-		{
-			"name": "create order",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "1|AAwM9B0b6PlwKv8rCX0p8CcGqpKIUuFwzDFTR6xR74044172"
-					}
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "firstName",
-							"value": "mohnd",
-							"type": "text"
-						},
-						{
-							"key": "lastName",
-							"value": "ibrahem",
-							"type": "text"
-						},
-						{
-							"key": "",
-							"value": "",
-							"type": "text",
-							"disabled": true
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/update"
-			},
-			"response": []
-		},
-		{
-			"name": "add admin to store",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "1|AAwM9B0b6PlwKv8rCX0p8CcGqpKIUuFwzDFTR6xR74044172"
-					}
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "firstName",
-							"value": "mohnd",
-							"type": "text"
-						},
-						{
-							"key": "lastName",
-							"value": "ibrahem",
-							"type": "text"
-						},
-						{
-							"key": "",
-							"value": "",
-							"type": "text",
-							"disabled": true
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/update"
-			},
-			"response": []
-		},
-		{
-			"name": "user orders",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "2|yKhgV4rjWrVJZ1MWsullcDohEfTgBP8fhmEchawJ0e4edb45"
-					}
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": "http://127.0.0.1:8000/api/userOrders"
-			},
-			"response": []
-		},
-		{
-			"name": "delete order",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "1|AAwM9B0b6PlwKv8rCX0p8CcGqpKIUuFwzDFTR6xR74044172"
-					}
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "firstName",
-							"value": "mohnd",
-							"type": "text"
-						},
-						{
-							"key": "lastName",
-							"value": "ibrahem",
-							"type": "text"
-						},
-						{
-							"key": "",
-							"value": "",
-							"type": "text",
-							"disabled": true
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/update"
-			},
-			"response": []
-		},
-		{
-			"name": "update order",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "1|AAwM9B0b6PlwKv8rCX0p8CcGqpKIUuFwzDFTR6xR74044172"
-					}
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "firstName",
-							"value": "mohnd",
-							"type": "text"
-						},
-						{
-							"key": "lastName",
-							"value": "ibrahem",
-							"type": "text"
-						},
-						{
-							"key": "",
-							"value": "",
-							"type": "text",
-							"disabled": true
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/update"
-			},
-			"response": []
-		},
-		{
-			"name": "add product to store",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "1|AAwM9B0b6PlwKv8rCX0p8CcGqpKIUuFwzDFTR6xR74044172"
-					}
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "firstName",
-							"value": "mohnd",
-							"type": "text"
-						},
-						{
-							"key": "lastName",
-							"value": "ibrahem",
-							"type": "text"
-						},
-						{
-							"key": "",
-							"value": "",
-							"type": "text",
-							"disabled": true
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/update"
-			},
-			"response": []
-		},
-		{
-			"name": "delete admin from store",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "1|AAwM9B0b6PlwKv8rCX0p8CcGqpKIUuFwzDFTR6xR74044172"
-					}
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "firstName",
-							"value": "mohnd",
-							"type": "text"
-						},
-						{
-							"key": "lastName",
-							"value": "ibrahem",
-							"type": "text"
-						},
-						{
-							"key": "",
-							"value": "",
-							"type": "text",
-							"disabled": true
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/update"
-			},
-			"response": []
-		},
-		{
-			"name": "get All Admins",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "1|AAwM9B0b6PlwKv8rCX0p8CcGqpKIUuFwzDFTR6xR74044172"
-					}
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "firstName",
-							"value": "mohnd",
-							"type": "text"
-						},
-						{
-							"key": "lastName",
-							"value": "ibrahem",
-							"type": "text"
-						},
-						{
-							"key": "",
-							"value": "",
-							"type": "text",
-							"disabled": true
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/update"
-			},
-			"response": []
-		},
-		{
-			"name": "get store Products",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "12|aHKCbyK08m41Nd4SOPBXiasV3WbtYnJPYN1NzFjDbf963b90"
-					}
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "firstName",
-							"value": "mohnd",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "lastName",
-							"value": "ibrahem",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "",
-							"value": "",
-							"type": "text",
-							"disabled": true
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/getProducts"
-			},
-			"response": []
-		},
-		{
-			"name": "delete product from store",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "12|aHKCbyK08m41Nd4SOPBXiasV3WbtYnJPYN1NzFjDbf963b90"
-					}
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "firstName",
-							"value": "mohnd",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "lastName",
-							"value": "ibrahem",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "",
-							"value": "",
-							"type": "text",
-							"disabled": true
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/getProducts"
-			},
-			"response": []
-		},
-		{
-			"name": "update Product by admin",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "12|aHKCbyK08m41Nd4SOPBXiasV3WbtYnJPYN1NzFjDbf963b90"
-					}
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "product_id",
-							"value": "5",
-							"type": "text"
-						},
-						{
-							"key": "name",
-							"value": "condom",
-							"type": "text"
-						},
-						{
-							"key": "description",
-							"value": "it is perfect to save your life away from the hell",
-							"type": "text"
-						},
-						{
-							"key": "price",
-							"value": "0.99",
-							"type": "text"
-						},
-						{
-							"key": "quantity",
-							"value": "100",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/updateProduct"
-			},
-			"response": []
-		},
-		{
-			"name": "update store",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "12|aHKCbyK08m41Nd4SOPBXiasV3WbtYnJPYN1NzFjDbf963b90"
-					}
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "product_id",
-							"value": "5",
-							"type": "text"
-						},
-						{
-							"key": "name",
-							"value": "condom",
-							"type": "text"
-						},
-						{
-							"key": "description",
-							"value": "it is perfect to save your life away from the hell",
-							"type": "text"
-						},
-						{
-							"key": "price",
-							"value": "0.99",
-							"type": "text"
-						},
-						{
-							"key": "quantity",
-							"value": "100",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/updateProduct"
-			},
-			"response": []
-		},
-		{
-			"name": "change admin",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "12|aHKCbyK08m41Nd4SOPBXiasV3WbtYnJPYN1NzFjDbf963b90"
-					}
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "product_id",
-							"value": "5",
-							"type": "text"
-						},
-						{
-							"key": "name",
-							"value": "condom",
-							"type": "text"
-						},
-						{
-							"key": "description",
-							"value": "it is perfect to save your life away from the hell",
-							"type": "text"
-						},
-						{
-							"key": "price",
-							"value": "0.99",
-							"type": "text"
-						},
-						{
-							"key": "quantity",
-							"value": "100",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/updateProduct"
-			},
-			"response": []
-		},
-		{
-			"name": "change image product",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "12|aHKCbyK08m41Nd4SOPBXiasV3WbtYnJPYN1NzFjDbf963b90"
-					}
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "product_id",
-							"value": "5",
-							"type": "text"
-						},
-						{
-							"key": "name",
-							"value": "condom",
-							"type": "text"
-						},
-						{
-							"key": "description",
-							"value": "it is perfect to save your life away from the hell",
-							"type": "text"
-						},
-						{
-							"key": "price",
-							"value": "0.99",
-							"type": "text"
-						},
-						{
-							"key": "quantity",
-							"value": "100",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/updateProduct"
-			},
-			"response": []
-		},
-		{
-			"name": "update Product Image",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "12|aHKCbyK08m41Nd4SOPBXiasV3WbtYnJPYN1NzFjDbf963b90"
-					}
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "product_id",
-							"value": "5",
-							"type": "text"
-						},
-						{
-							"key": "name",
-							"value": "condom",
-							"type": "text"
-						},
-						{
-							"key": "description",
-							"value": "it is perfect to save your life away from the hell",
-							"type": "text"
-						},
-						{
-							"key": "price",
-							"value": "0.99",
-							"type": "text"
-						},
-						{
-							"key": "quantity",
-							"value": "100",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://127.0.0.1:8000/api/updateProduct"
-			},
-			"response": []
 		}
 	],
 	"event": [
@@ -3052,12 +4295,12 @@
 	"variable": [
 		{
 			"key": "token",
-			"value": "25|EIDTfhDPMGmhdS9eR3zpwlZpXhwhFd8jVH6kjpce45ed1b75",
+			"value": "3|hAB7fFExz08umYKiOicdSvkQC9r7vmiL0Zb5vYOybe82deb5",
 			"type": "string"
 		},
 		{
 			"key": "token2",
-			"value": "24|tJXToA0ZykM4AKD3UXIJm7UHa7XmVPjH8Fax1tOfd94e1317",
+			"value": "3|hAB7fFExz08umYKiOicdSvkQC9r7vmiL0Zb5vYOybe82deb5",
 			"type": "string"
 		}
 	]

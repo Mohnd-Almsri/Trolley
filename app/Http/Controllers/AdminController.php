@@ -148,7 +148,7 @@ if($admin)
 
         return response()->json([
             'status' => 0,
-            'message' => 'You are not authorized to delete this product.',
+            'message' => 'You are not authorized to delete this product because you are not the admin who has access to this store.',
         ]);
     }
     public function updateProduct(Request $request)
