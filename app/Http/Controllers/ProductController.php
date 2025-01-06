@@ -69,6 +69,11 @@ class ProductController extends Controller
         $store->reviews = $sr / $store->reviews_count;
         $store->save();
     }
+    public function getRecommended()
+    {
+        $recProducts=Product::orderBy('reviews','DESC')->take(10)->get();
+        return response()->json(['status'=>1,'products'=>$recProducts]);
+    }
 //    public function getProductForHome()
 //    {
 //        $products=Product::get();

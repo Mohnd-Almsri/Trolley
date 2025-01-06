@@ -48,10 +48,12 @@ Route::controller(ProductController::class)->group(function () {
     Route::post('/addReview', 'addReview');
     Route::get('/getFavoriteProducts', 'getFavoriteProducts');
     Route::get('getProductForHome', 'getProductForHome');
+    Route::get('getRecommended', 'getRecommended');
 });
 
 Route::controller(SearchController::class)->group(function () {
-    Route::get('/search', 'search');
+    Route::get('/searchLetters', 'searchLetters');
+    Route::get('/search', 'searchLetters');
 });
 
 Route::controller(AdminController::class)->middleware('auth:sanctum')->group(function () {
