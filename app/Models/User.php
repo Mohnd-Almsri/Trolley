@@ -43,8 +43,6 @@ class User extends Authenticatable
         'verification_code_expires_at',
         'created_at',
         'updated_at'
-
-
     ];
     public function favorites(){
         return $this->belongsToMany(Product::class,'favorites','user_id','product_id');
