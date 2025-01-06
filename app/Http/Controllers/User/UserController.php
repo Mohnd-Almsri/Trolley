@@ -21,7 +21,7 @@ class UserController extends Controller
 
     public function userInfo()
     {
-return response()->json([
+    return response()->json([
     'status'=> 1,
     'data'=>auth()->user()]);
     }
@@ -58,7 +58,6 @@ return response()->json([
                 ]);
             }
             else{
-
                 return response()->json([
                     'status'=>0,
                     'message'=>'User phone  did not verified'
@@ -90,12 +89,10 @@ return response()->json([
             'firstName'=>$request->firstName,
             'lastName'=>$request->lastName]);
 
-return response()->json([
-    'status'=>1,
-    'message'=>'Update Successfully'
-]);
-
-
+        return response()->json([
+            'status'=>1,
+            'message'=>'Update Successfully'
+        ]);
 
     }
     public function ChangePassword(Request $request){
@@ -103,9 +100,7 @@ return response()->json([
             'currentPassword'=>'required',
             'newPassword'=>'required|min:8|confirmed',
         ]);
-
         if(Hash::check($request->currentPassword, auth()->user()->password)) {
-
         auth()->user()->update([
            'password'=>$request->newPassword
         ]);
@@ -128,6 +123,16 @@ return response()->json([
     public function changeProfileImage(Request $request){
     return $this->updateImage($request,"User");
     }
+    public function changeLocation(Request $request){
+        $request->validate(['location'=>'required']);
+        auth()->user()->update(['location']);
+        return response()->json([
+            'status'=>1,
+            'message'=>'Location Changed Successfully'
+        ]);
+    }
+
+
 
     public function logout(){
         auth()->user()->tokens()->delete();

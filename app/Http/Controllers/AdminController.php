@@ -68,7 +68,7 @@ if($admin)
         $request->validate([
             'admin_id' => 'required|exists:admins,id',
         ]);
-        $superAdmin = Admin::where('id','=',auth()->user()->id)->where('role','=','Super-Admin')->first();
+        $superAdmin = Admin::where('role','=','super-admin')->first();
         if($superAdmin){
             if($superAdmin->id!=$request->admin_id){
 
@@ -276,10 +276,10 @@ if($admin)
             'user_id' => 'required|exists:users,id',
         ]);
         if (Admin::where('user_id', '=', auth()->user()->id)->where('role', '=', 'Super-Admin')->exists()) {
-     Admin::where('id','=',$request->admin_id)->update([
-         'user_id' =>$request->user_id,
-     ]);
-     return response()->json([
+             Admin::where('id','=',$request->admin_id)->update([
+                 'user_id' =>$request->user_id,
+             ]);
+    return response()->json([
          'status' => 1,
          'message' => 'Admin updated successfully.',
      ]);

@@ -18,7 +18,7 @@ Route::controller(PasswordController::class)->group(function () {
    Route::middleware([verificationMiddleware::class])->group(function () {
        Route::post('/sendCodeResetPassword', 'sendCodeChangePassword');
        Route::post('/codeResetPassword',  'checkCodeChangePassword');
-            Route::post('/resetPassword','changePassword');
+       Route::post('/resetPassword','reset\Password');
    });
 });
 
@@ -29,9 +29,9 @@ Route::controller(UserController::class)->group(function () {
     Route::post('/login', 'login')->middleware(verificationMiddleware::class);
     Route::post('/update', 'update')->middleware('auth:sanctum');
     Route::post('/changeProfileImage', 'changeProfileImage')->middleware('auth:sanctum');
+    Route::post('/changeLocation', 'changeLocation')->middleware('auth:sanctum');
     Route::get('/userInfo', 'userInfo')->middleware('auth:sanctum');
     Route::post('/changePassword', 'changePassword')->middleware('auth:sanctum');
-
 });
 
 Route::controller(VerificationCodeController::class)->group(function () {
@@ -42,17 +42,15 @@ Route::post('/verification',  'verification');
 Route::controller(StoreController::class)->group(function () {
     Route::get('/storeInfo', 'StoreInfo');
     Route::get('/StoresForCategory', 'StoresForCategory');
-    Route::post('/addStore', 'addStore');
-//    Route::get('/searchStores', 'searchStores');
 });
 Route::controller(ProductController::class)->group(function () {
     Route::get('/getProductInfo', 'getProductInfo');
     Route::post('/addReview', 'addReview');
     Route::get('/getFavoriteProducts', 'getFavoriteProducts');
-//    Route::get('/searchProducts', 'searchProducts');
+    Route::get('getProductForHome', 'getProductForHome');
 });
 
-Route::controller(\App\Http\Controllers\SearchController::class)->group(function () {
+Route::controller(SearchController::class)->group(function () {
     Route::get('/search', 'search');
 });
 

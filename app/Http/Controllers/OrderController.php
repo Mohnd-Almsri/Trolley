@@ -36,7 +36,8 @@ class OrderController extends Controller
             $productTable = Product::whereIn('id', $productIds)->get()->keyBy('id');
 
             foreach ($request->products as $product) {
-
+                $product->ordered+=1;
+                $product->save();
                 $currentProduct = $productTable->get($product['product_id']);
 
                 if ($currentProduct) {
@@ -101,10 +102,10 @@ $this->sendMessage(auth()->user()->phoneNumber, $this->formatOrderToText($order)
 
         try {
             $order = Order::with('orderItems')->findOrFail($request->order_id);
-if($order->status=='pending'){
-    foreach ($order->orderItems as $orderItem) {
+        if($order->status=='pending'){
+        foreach ($order->orderItems as $orderItem) {
         Product::where('id', $orderItem->product_id)->increment('quantity', $orderItem->quantity);
-    }
+        }
 
     $order->orderItems()->delete();
 
@@ -212,9 +213,9 @@ else
         }
     }
     public function UserOrders(){
-return response()->json([
-                     'status'=>1,
-                     'data'=>  auth()->user()->load('order.orderItems')
+    return response()->json([
+    'status'=>1,
+    'data'=>  auth()->user()->load('order.orderItems')
     ]);
 
 

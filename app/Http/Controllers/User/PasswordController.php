@@ -61,7 +61,7 @@ class PasswordController extends Controller
         }
 
     }
-    public function changePassword(Request $request)
+    public function resetPassword(Request $request)
     {
         $request->validate([
             'phoneNumber' => 'required|min:10|max:10',
