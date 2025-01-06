@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('description');
+            $table->foreignId('category_id')->constrained('categories');
             $table->float('reviews')->default(0);
             $table->string('image')->nullable();
             $table->unsignedInteger('reviews_count')->default(0);
-            $table->foreignId('category_id')->constrained('categories');
             $table->timestamps();
         });
     }

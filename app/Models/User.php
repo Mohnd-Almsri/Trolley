@@ -23,7 +23,8 @@ class User extends Authenticatable
         'phoneNumber',
         'location',
         'password',
-        'profilePic'
+        'profilePic',
+        'passwordReset'
 
     ];
 

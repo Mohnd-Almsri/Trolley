@@ -188,7 +188,7 @@ if($admin)
             'message' => 'You are not authorized to update this product.',
         ]);
     }
-public function updateProductImage(Request $request){
+    public function updateProductImage(Request $request){
         return $this->updateImage($request,"Product");
 }
     public function updateStoreImage(Request $request){

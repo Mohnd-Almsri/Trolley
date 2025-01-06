@@ -16,7 +16,7 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $admin = Admin::where('user_id','=',auth()->user()->id);
+        $admin = Admin::where('user_id','=',auth()->user()->id)->where('store_id','=',);
         if($admin || (Admin::where('user_id', '=', auth()->user()->id)->where('role', '=', 'Super-Admin')->exists())) {
             return $next($request);
         }

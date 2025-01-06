@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('description');
             $table->unsignedInteger('price');
             $table->unsignedInteger('quantity');
-            $table->string('image')->nullable();
             $table->foreignId('store_id')->constrained('stores');
+            $table->string('image')->nullable();
             $table->integer('ordered')->default(0);
             $table->float('reviews')->default(0);
             $table->unsignedInteger('reviews_count')->default(0);
