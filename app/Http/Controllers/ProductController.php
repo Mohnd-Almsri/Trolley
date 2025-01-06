@@ -71,7 +71,7 @@ class ProductController extends Controller
     }
     public function getRecommended()
     {
-        $recProducts=Product::orderBy('reviews','DESC')->take(10)->get();
+        $recProducts=Product::with(['store:id,name'])->orderBy('reviews','DESC')->take(10)->get();
         return response()->json(['status'=>1,'products'=>$recProducts]);
     }
 //    public function getProductForHome()
