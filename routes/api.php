@@ -39,11 +39,11 @@ Route::controller(VerificationCodeController::class)->group(function () {
 Route::post('/verification',  'verification');
 
 });
-Route::controller(StoreController::class)->group(function () {
+Route::controller(StoreController::class)->middleware('auth:sanctum')->group(function () {
     Route::get('/storeInfo', 'StoreInfo');
     Route::get('/StoresForCategory', 'StoresForCategory');
 });
-Route::controller(ProductController::class)->group(function () {
+Route::controller(ProductController::class)->middleware('auth:sanctum')->group(function () {
     Route::get('/getProductInfo', 'getProductInfo');
     Route::post('/addReview', 'addReview');
     Route::get('/getFavoriteProducts', 'getFavoriteProducts');
@@ -51,7 +51,7 @@ Route::controller(ProductController::class)->group(function () {
     Route::get('getRecommended', 'getRecommended');
 });
 
-Route::controller(SearchController::class)->group(function () {
+Route::controller(SearchController::class)->middleware('auth:sanctum')->group(function () {
     Route::get('/searchLetters', 'searchLetters');
     Route::get('/search', 'searchLetters');
 });
@@ -81,7 +81,7 @@ Route::controller(OrderController::class)->middleware('auth:sanctum')->group(fun
     Route::post('/deleteOrder', 'deleteOrder');
     Route::post('/updateOrder', 'updateOrder');
 });
-Route::controller(FavoriteController::class)->group(function () {
+Route::controller(FavoriteController::class)->middleware('auth:sanctum')->group(function () {
     Route::post('/addFavorite', 'addFavorite');
     Route::post('/removeFavorite', 'removeFavorite');
 });
