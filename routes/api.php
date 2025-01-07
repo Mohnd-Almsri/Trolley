@@ -47,8 +47,8 @@ Route::controller(ProductController::class)->middleware('auth:sanctum')->group(f
     Route::get('/getProductInfo', 'getProductInfo');
     Route::post('/addReview', 'addReview');
     Route::get('/getFavoriteProducts', 'getFavoriteProducts');
-    Route::get('getProductForHome', 'getProductForHome');
-    Route::get('getRecommended', 'getRecommended');
+    Route::get('/getProductForHome', 'getProductForHome');
+    Route::get('/getRecommended', 'getRecommended');
 });
 
 Route::controller(SearchController::class)->middleware('auth:sanctum')->group(function () {
