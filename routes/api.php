@@ -40,7 +40,7 @@ Route::post('/verification',  'verification');
 
 });
 Route::controller(StoreController::class)->middleware('auth:sanctum')->group(function () {
-    Route::get('/StoreInfo', 'StoreInfo');
+    Route::post('/StoreInfo', 'StoreInfo');
     Route::post('/StoresForCategory', 'StoresForCategory');
 });
 Route::controller(ProductController::class)->middleware('auth:sanctum')->group(function () {
