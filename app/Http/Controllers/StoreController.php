@@ -27,7 +27,7 @@ class StoreController extends Controller
     }
     public function StoresForCategory(Request $request){
         $request->validate(['category_id' => 'required']);
-        $stores=Store::where($request->category_id,'=','category_id')->get();
+        $stores=Store::where('category_id','=',$request->category_id)->get();
         if($stores){
         return response()->json([
             'status'=>1,
