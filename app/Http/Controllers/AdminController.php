@@ -195,16 +195,25 @@ if($admin)
         return $this->updateImage($request,"Store");
     }
     public function getAdmins(){
-        if (Admin::where('user_id', '=', auth()->user()->id)->where('role', '=', 'Super-Admin')->exists()) {
-        $admins = Admin::all();
-        return response()->json([
-            'status' => 1,
-            'admins' => $admins,
-        ]);}
-        return response()->json([
-            'status' => 0,
-            'message' => 'You are not authorized to get admins.',
-        ]);
+//        if (Admin::where('user_id', '=', auth()->user()->id)->where('role', '=', 'Super-Admin')->exists()) {
+//        $admins = Admin::all();
+//        return response()->json([
+//            'status' => 1,
+//            'admins' => $admins,
+//        ]);}
+//        return response()->json([
+//            'status' => 0,
+//            'message' => 'You are not authorized to get admins.',
+//        ]);
+
+        return Store::with('products:id,name,store_id')
+            ->get(['id', 'name'])
+            ->map(function ($store) {
+                return [
+                    'store_name' => $store->name,
+                    'products' => $store->products->pluck('name','id'),
+                ];
+            });
     }
     public function getStore() {
         $admin = Admin::where('user_id', auth()->user()->id)->first();

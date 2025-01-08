@@ -28,13 +28,13 @@ if ($model) {
 
     $imagePath = $modelName1 === 'Store'
         ? $request->file('image')->storeAs(
-            'Stores/' .$model->category->name.'/'. $imageName,
+            'Stores/' .str_replace(' ', '_', $model->category->name).'/'. $imageName,
             $imageName . '.' . $request->file('image')->getClientOriginalExtension(),
             'public'
         )
         : ($modelName1 === 'Product'
             ? $request->file('image')->storeAs(
-                'Stores/' .$model->store->category->name .'/'. str_replace(' ', '_', $model->Store->name).  '/Products',
+                'Stores/' .str_replace(' ', '_',$model->store->category->name) .'/'. str_replace(' ', '_', $model->Store->name).  '/Products',
                 $imageName  . '.' . $request->file('image')->getClientOriginalExtension(),
                 'public'
             )

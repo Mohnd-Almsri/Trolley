@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -14,6 +16,14 @@ class Product extends Model
         'store_id',
         'image'
     ];
+
+    public function image(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => url(Storage::url($value)),
+        );
+    }
+
     public function favorited() {
         return $this->belongsToMany(User::class, 'favorites');}
     public function comments(){
