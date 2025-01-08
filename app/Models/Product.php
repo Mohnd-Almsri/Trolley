@@ -16,7 +16,10 @@ class Product extends Model
         'store_id',
         'image'
     ];
-
+protected $hidden = [
+    "created_at",
+    "updated_at"
+];
     public function image(): Attribute
     {
         return Attribute::make(
