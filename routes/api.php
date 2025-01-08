@@ -13,7 +13,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\PasswordController;
 use App\Http\Controllers\SearchController;
-
+Route::get('/', function () {
+    return response("hello world");
+});
 Route::controller(PasswordController::class)->group(function () {
    Route::middleware([verificationMiddleware::class])->group(function () {
        Route::post('/sendCodeResetPassword', 'sendCodeChangePassword');
