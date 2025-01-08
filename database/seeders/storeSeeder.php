@@ -38,6 +38,30 @@ class storeSeeder extends Seeder
                 'name' => 'Luxury Scents',
                 'description' => 'Exclusive perfumes and fragrances',
                 'category_id' => 5,
+            ], [
+                'name' => 'KFC',
+                'description' => 'Best pizza in town',
+                'category_id' => 1,
+            ],
+            [
+                'name' => 'Pulpo tech',
+                'description' => 'Latest gadgets and electronics',
+                'category_id' => 2,
+            ],
+            [
+                'name' => 'alrahmaa',
+                'description' => 'Your trusted pharmacy',
+                'category_id' => 3,
+            ],
+            [
+                'name' => 'alkourdy',
+                'description' => 'Fresh groceries every day',
+                'category_id' => 4,
+            ],
+            [
+                'name' => 'alwaled',
+                'description' => 'Exclusive perfumes and fragrances',
+                'category_id' => 5,
             ],
         ];
         foreach ($stores as $store) {

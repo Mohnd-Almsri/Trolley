@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('firstName',20);
             $table->string('lastName',20);
-            $table->string('phoneNumber',15)->unique();
+            $table->string('phoneNumber',15);
             $table->string('password',150);
             $table->string('location');
             $table->string('number_verification')->nullable()->default(0);

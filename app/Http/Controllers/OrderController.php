@@ -10,7 +10,8 @@ use App\Traits\SendMessageTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class OrderController extends Controller
+class
+ OrderController extends Controller
 {
     use sendMessageTrait;
     public function CreateOrder(Request $request)
