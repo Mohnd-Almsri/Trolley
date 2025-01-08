@@ -24,7 +24,7 @@ class RegisterUserRequest extends FormRequest
         return [
             'firstName' => 'required',
             'lastName' => 'required',
-            'phoneNumber' => 'required|unique:users|min:10|max:10',
+            'phoneNumber' => 'required|min:10|max:10',
             'password' => 'required|min:8|confirmed',
             'location' => 'required',
         ];
