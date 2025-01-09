@@ -24,12 +24,10 @@ class ProductController extends Controller
         $product=Product::where('id','=',$request->product_id)->first();
         return response()->json(['status'=>1,'product'=>$product]);
     }
-    public function getFavoriteProducts(Request $request)
+    public function getFavoriteProducts()
     {
-        $request->validate([
-            'user_id' => 'required|exists:users,id',
-        ]);
-        $favorites=User::find($request->user_id)->favorites;
+
+        $favorites=User::find(auth()->id())->favorites;
         return response()->json([
             'status'=>1,
             'favorites'=>$favorites
@@ -52,7 +50,7 @@ class ProductController extends Controller
     }
     public function getRecommended()
     {
-        $recProducts=Product::with(['store:id,name'])->orderBy('reviews','DESC')->take(10)->get();
+        $recProducts=Product::with(['store:id,name,image'])->orderBy('reviews','DESC')->take(10)->get();
         return response()->json(['status'=>1,'products'=>$recProducts]);
     }
     /*  public function searchProducts(request $request){
