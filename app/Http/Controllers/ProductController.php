@@ -50,6 +50,7 @@ class ProductController extends Controller
     }
     public function getRecommended()
     {
+        //hello munther
         $recProducts=Product::with(['store:id,name,image'])->orderBy('reviews','DESC')->take(10)->get();
         return response()->json(['status'=>1,'products'=>$recProducts]);
     }
