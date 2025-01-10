@@ -33,7 +33,7 @@ class User extends Authenticatable
     public function profile(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => url(Storage::url($value)),
+            get: fn ($value) => $value ?url(Storage::url($value)):null,
         );
     }
 
