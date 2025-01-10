@@ -28,7 +28,7 @@ class User extends Authenticatable
         'profile',
         'passwordReset'
 
-    ];
+    ];//
 
     public function profile(): Attribute
     {
