@@ -48,7 +48,7 @@ if ($model) {
             )
         );
 if($modelName1=='User')
-    $model->update(['profilePic' => $imagePath]);
+    $model->update(['profile' => $imagePath]);
     else
         $model->update(['image' => $imagePath]);
 

@@ -25,12 +25,12 @@ class User extends Authenticatable
         'phoneNumber',
         'location',
         'password',
-        'profilePic',
+        'profile',
         'passwordReset'
 
     ];
 
-    public function profilePic(): Attribute
+    public function profile(): Attribute
     {
         return Attribute::make(
             get: fn ($value) => url(Storage::url($value)),
