@@ -87,10 +87,14 @@ class UserController extends Controller
         $request->validate([
             'firstName' => 'required',
             'lastName'  => 'required',
+            'location' => 'required',
         ]);
         auth()->user()->update([
             'firstName'=>$request->firstName,
-            'lastName'=>$request->lastName]);
+            'lastName'=>$request->lastName,
+            'location'=>$request->location,
+        ]);
+
 
         return response()->json([
             'status'=>1,
@@ -126,14 +130,7 @@ class UserController extends Controller
     public function changeProfileImage(Request $request){
     return $this->updateImage($request,"User");
     }
-    public function changeLocation(Request $request){
-        $request->validate(['location'=>'required']);
-        auth()->user()->update(['location']);
-        return response()->json([
-            'status'=>1,
-            'message'=>'Location Changed Successfully'
-        ]);
-    }
+
 
 
 

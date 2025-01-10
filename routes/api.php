@@ -29,9 +29,8 @@ Route::controller(UserController::class)->group(function () {
     Route::post('/register', 'register');
     Route::get('/logout',  'logout')->middleware('auth:sanctum');
     Route::post('/login', 'login')->middleware(verificationMiddleware::class);
-    Route::post('/update', 'update')->middleware('auth:sanctum');
+    Route::post('/editInfo', 'update')->middleware('auth:sanctum');
     Route::post('/changeProfileImage', 'changeProfileImage')->middleware('auth:sanctum');
-    Route::post('/changeLocation', 'changeLocation')->middleware('auth:sanctum');
     Route::get('/userInfo', 'userInfo')->middleware('auth:sanctum');
     Route::post('/changePassword', 'changePassword')->middleware('auth:sanctum');
 });
