@@ -54,8 +54,8 @@ Route::controller(ProductController::class)->middleware('auth:sanctum')->group(f
 });
 
 Route::controller(SearchController::class)->middleware('auth:sanctum')->group(function () {
-    Route::get('/searchLetters', 'searchLetters');
-    Route::get('/search', 'searchLetters');
+    Route::post('/searchLetters', 'searchLetters');
+    Route::post('/search', 'search');
 });
 
 Route::controller(AdminController::class)->middleware('auth:sanctum')->group(function () {
