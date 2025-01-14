@@ -22,6 +22,7 @@ public function verifyCodegenerate($user_id){
 }
 public function sendVerificationCode($user_phone,$code){
     $message = "🔒 *Your Verification Code:* \n\n";
+    $message .= "--------------------------------\n";
     $message .= "📩 *$code*\n\n";
     $message .= "*Please use this code to verify your account. The code will expire in 10 minutes.*\n";
     $message .= "If you didn't request this, please ignore this message.\n";
