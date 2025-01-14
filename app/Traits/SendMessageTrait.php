@@ -80,24 +80,41 @@ public function sendMessage($user_phone,$message)
 
         $userName = $order->user->firstName . ' ' . $order->user->lastName;
 
-        $message = "Hello {$userName},\n";
-        $message .= "Thank you for your order! Here are the details:\n\n";
-        $message .= "Order ID: {$order->id}\n";
-        $message .= "Total Price: \${$order->total_price}\n\n";
-        $message .= "Products:\n";
-        $i=1;
+        $message = "🌟 *Hello {$userName},* 🌟\n\n ";
+
+        $message .= "*Thank you for choosing us! Here's your order summary:* \n\n";
+
+        $message .= "-------------------------\n";
+        $message .= "📦 *Order ID:* {$order->id} \n";
+        $message .= "💰 *Total Price:* \${$order->total_price} \n";
+        $message .= "-------------------------\n\n";
+
+        $message .= "🔹 *Your Products:*\n";
+        $i = 1;
         foreach ($order->orderItems as $orderItem) {
             $product = $orderItem->product;
-            $message .= "$i . {$product->name}  ( Quantity: {$orderItem->quantity} , Price: \${$product->price} , Total Price: \${$orderItem->total_price})\n";
+            $message .= "{$i}. *{$product->name}*  (Qty: *{$orderItem->quantity}*, Price: *\${$product->price}*, Total: *\${$orderItem->total_price}*)\n";
             $i++;
         }
-        $orderTimePlusQuarter = Carbon::parse($order->created_at)->addMinutes(15)->format('Y-m-d H:i');
 
-        $message .= "\nEstimated Delivery Time: {$orderTimePlusQuarter}\n\n";
-        $message .= "Your delivery driver: {$randomDriver['name']}\n";
-        $message .= "Driver's phone: {$randomDriver['phone']}\n\n";
-        $message .= "\nWe appreciate your business! Please let us know if you have any questions.\n\n";
-        $message .= "Best regards,\n    *TROLLEY* ";
+        $orderTimePlusQuarter = Carbon::parse($order->created_at)->addMinutes(15)->format('Y-m-d H:i');
+        $message .= "\n⏰ *Estimated Delivery Time:* {$orderTimePlusQuarter}\n\n";
+
+        $message .= "-------------------------\n";
+        $message .= "🚚 *Your delivery driver:* *{$randomDriver['name']}*\n";
+        $message .= "📞 *Driver's contact:* *{$randomDriver['phone']}*\n";
+        $message .= "-------------------------\n\n";
+
+        $message .= "*We truly appreciate your business and are excited to deliver your order!* \n";
+        $message .= "*If you have any questions or need assistance, feel free to reach out.*\n\n";
+
+        $message .= "Best regards,\n";
+        $message .= "*TROLLEY TEAM*\n";
+        $message .= "--------------------------------\n";
+        $message .= "*Thank you for trusting us!* 🌟\n ";
+
+
+
 
         return $message;
     }
