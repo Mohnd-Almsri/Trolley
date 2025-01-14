@@ -50,28 +50,8 @@ class ProductController extends Controller
     }
     public function getRecommended()
     {
-        //hello munther
-
-
         $recProducts=Product::with(['store:id,name,image'])->orderBy('reviews','DESC')->take(10)->get();
         return response()->json(['status'=>1,'products'=>$recProducts]);
     }
-    /*  public function searchProducts(request $request){
-          $request->validate([
-              'search' => 'required'
-          ]);
-          $products=Product::where('name','LIKE','%'.$request->search.'%')->take(15)->get();
-          if($products){
-          return response()->json([
-              'status'=>1,
-              'products' => $products,
-              'message'=>'Products added successfully'
-          ]);
-          }else{
-              return response()->json([
-                  'status'=>0,
-                  'message'=>'Products not found'
-              ]);
-          }
-     } */
+
 }

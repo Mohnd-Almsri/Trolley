@@ -13,12 +13,11 @@ class SearchController extends Controller
         $request->validate([
             'search' => 'required'
         ]);
-        $products = Product::where('name', 'LIKE', '%' . $request->search . '%')->take(15)->get();
-        $stores = Store::where('name', 'LIKE', '%' . $request->search . '%')->take(5)->get();
+        $products = Product::where('name', 'LIKE', '%' . $request->search . '%')->select(['id','name'])->take(7)->get();
+
         return response()->json([
             'status' => 1,
             'products' => $products,
-            'stores' => $stores,
             'message'=>'Products added successfully'
         ]);
     }
@@ -27,12 +26,10 @@ class SearchController extends Controller
         $request->validate([
             'search' => 'required'
         ]);
-        $products = Product::where('name', 'LIKE', '%' . $request->search . '%')->get();
-        $stores = Store::where('name', 'LIKE', '%' . $request->search . '%')->get();
+        $products = Product::with(['store:id,name,image'])->where('name', 'LIKE', '%' . $request->search . '%')->get();
         return response()->json([
             'status' => 1,
             'products' => $products,
-            'stores' => $stores,
             'message'=>'Products added successfully'
         ]);
     }
