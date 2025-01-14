@@ -21,7 +21,7 @@ class PasswordController extends Controller
 
         if ($user) {
             $code=$this->verifyCodegenerate($user->id);
-            $this->sendVerificationCode($user->phoneNumber,$code);
+            $this->sendPasswordCode($user->phoneNumber,$code);
             return response()->json([
                 'status'=> 1,
                 'code'=>$code]);

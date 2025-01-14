@@ -21,9 +21,27 @@ public function verifyCodegenerate($user_id){
     return $code;
 }
 public function sendVerificationCode($user_phone,$code){
-    $message="Your verification code is $code ";
+    $message = "🔒 *Your Verification Code:* \n\n";
+    $message .= "📩 *$code*\n\n";
+    $message .= "*Please use this code to verify your account. The code will expire in 10 minutes.*\n";
+    $message .= "If you didn't request this, please ignore this message.\n";
+    $message .= "--------------------------------\n";
+    $message .= "Thank you for choosing us! 😊";
     $this->sendMessage($user_phone,$message);
 }
+
+    public function sendPasswordCode($user_phone,$code){
+        $message = "🔐 *Password Reset Request* \n\n";
+        $message .= "📩 *Your Reset Password Code:* \n\n";
+        $message .= "--------------------------------\n";
+        $message .= "*$code*\n\n";
+        $message .= "*Please use this code to reset your password. The code will expire in 10 minutes.*\n\n";
+        $message .= "*If you didn't request this, please ignore this message.*\n";
+        $message .= "--------------------------------\n";
+        $message .= "Thank you for trusting us! 😊";
+
+        $this->sendMessage($user_phone,$message);
+    }
 public function sendMessage($user_phone,$message)
 {
 
