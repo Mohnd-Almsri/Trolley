@@ -35,6 +35,17 @@ class User extends Authenticatable
         return Attribute::make(
             get: fn ($value) => $value ?url(Storage::url($value)):null,
         );
+    }   public function lastName(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => ucfirst($value),
+        );
+    }
+    public function firstName(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => ucfirst($value),
+        );
     }
 
     /**

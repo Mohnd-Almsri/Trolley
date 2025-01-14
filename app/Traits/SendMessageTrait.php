@@ -70,6 +70,13 @@ public function sendMessage($user_phone,$message)
     function formatOrderToText($order) {
 
         $order->load(['orderItems.product', 'user']);
+        $drivers = [
+            ['name' => 'Farouk Dawoud', 'phone' => '0994531807'],
+            ['name' => 'Amir Alhomsi', 'phone' => '0927642319'],
+            ['name' => 'Raed Alkhiat', 'phone' => '0985213648'],
+            ['name' => 'Ahmed Khazaa', 'phone' => '0960327190']
+        ];
+        $randomDriver = $drivers[array_rand($drivers)];
 
         $userName = $order->user->firstName . ' ' . $order->user->lastName;
 
@@ -84,7 +91,11 @@ public function sendMessage($user_phone,$message)
             $message .= "$i . {$product->name}  ( Quantity: {$orderItem->quantity} , Price: \${$product->price} , Total Price: \${$orderItem->total_price})\n";
             $i++;
         }
+        $orderTimePlusQuarter = Carbon::parse($order->created_at)->addMinutes(15)->format('Y-m-d H:i');
 
+        $message .= "\nEstimated Delivery Time: {$orderTimePlusQuarter}\n\n";
+        $message .= "Your delivery driver: {$randomDriver['name']}\n";
+        $message .= "Driver's phone: {$randomDriver['phone']}\n\n";
         $message .= "\nWe appreciate your business! Please let us know if you have any questions.\n\n";
         $message .= "Best regards,\n    *TROLLEY* ";
 
