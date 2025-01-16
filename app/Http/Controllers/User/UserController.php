@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterUserRequest;
+use App\Models\Admin;
 use App\Models\User;
 use App\Traits\SendMessageTrait;
 use App\Traits\StoreImage;
@@ -21,10 +22,14 @@ class UserController extends Controller
 
     public function userInfo()
     {
+        $user= User::find(auth()->user()->id);
 
+        $role = Admin::find($user->id);
+        $data=$user;
+        $data["role"]=$role?$role->role:"user";
     return response()->json([
     'status'=> 1,
-    'data'=>User::find(auth()->user()->id)]);
+    'data'=>$data]);
     }
     public function register(RegisterUserRequest $request){
 
@@ -52,10 +57,12 @@ class UserController extends Controller
             if(Hash::check($request->password, $user->password)){
             if ($user->number_verification) {
                 $token = $user->createToken("auth_token")->plainTextToken;
+               $role = Admin::find($user->id);
                 return response()->json([
                     'status'=>1,
                     'message'=>'Login Successfully',
                     'token'=>$token,
+                    'role'=>$role?$role->role:"user" ,
                 ]);
             }
             else{
