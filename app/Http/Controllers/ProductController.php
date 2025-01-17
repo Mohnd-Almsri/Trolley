@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\addProductRequest;
 use App\Http\Requests\addReviewRequest;
 use App\Models\Comment;
+use App\Models\Favorite;
 use App\Models\Product;
 use App\Models\Store;
 use App\Models\User;
@@ -21,8 +22,20 @@ class ProductController extends Controller
     {
         $request->validate([
             'product_id' => 'required']);
-        $product=Product::where('id','=',$request->product_id)->with('favorited')->first();
-        return response()->json(['status'=>1,'product'=>$product]);
+        $rawProduct=Product::where('id','=',$request->product_id)->first();
+    $product =$rawProduct;
+     $favorite =   Favorite::where('product_id','=',$request->product_id)->where('user_id','=',auth()->user()->id)->first();
+if($favorite) {
+    $product['favorite'] = "true";
+    $product['userName'] = auth()->user()->firstName . ' ' . auth()->user()->lastName;
+}
+else {
+    $product['favorite'] = 'false';
+    $product['userName'] = auth()->user()->firstName . ' ' . auth()->user()->lastName;
+}
+        return response()->json(['status'=>1,
+            'product'=>$product]);
+
     }
     public function getFavoriteProducts()
     {
