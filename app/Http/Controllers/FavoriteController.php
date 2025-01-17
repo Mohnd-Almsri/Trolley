@@ -14,12 +14,13 @@ class FavoriteController extends Controller
             'product_id' => 'required|integer|exists:products,id',
             'is_favorite' => 'boolean|required'
         ]);
-        if($request->is_favorite==true){
+        if($request->is_favorite=='true'){
             Favorite::where('user_id','=',auth()->user()->id)->where('product_id','=',$request->product_id)->delete();
             return response()->json([
                 'status' => 1,
                 'message' => 'Favorite removed successfully'
             ]);}
+        else if ($request->is_favorite=='false')
         {
             Favorite::firstOrCreate(['user_id' => auth()->user()->id, 'product_id' => $request->product_id], $request->all());
             return response()->json([
