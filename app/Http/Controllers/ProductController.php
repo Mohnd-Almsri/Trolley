@@ -21,7 +21,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'product_id' => 'required']);
-        $product=Product::where('id','=',$request->product_id)->first();
+        $product=Product::where('id','=',$request->product_id)->with('favorited')->first();
         return response()->json(['status'=>1,'product'=>$product]);
     }
     public function getFavoriteProducts()
@@ -53,5 +53,6 @@ class ProductController extends Controller
         $recProducts=Product::with(['store:id,name,image'])->orderBy('reviews','DESC')->take(10)->get();
         return response()->json(['status'=>1,'products'=>$recProducts]);
     }
+
 
 }

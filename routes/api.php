@@ -85,7 +85,7 @@ Route::controller(OrderController::class)->middleware('auth:sanctum')->group(fun
 });
 Route::controller(FavoriteController::class)->middleware('auth:sanctum')->group(function () {
     Route::post('/addFavorite', 'addFavorite');
-    Route::post('/removeFavorite', 'removeFavorite');
+//    Route::post('/removeFavorite', 'removeFavorite');
 });
 
 
