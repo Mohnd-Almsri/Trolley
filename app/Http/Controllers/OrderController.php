@@ -181,7 +181,7 @@ else
 
         DB::beginTransaction();
         try {
-      if ($order->status=='Pending') {
+      if ($order->status=='Processing') {
           foreach ($order->orderItems as $orderItem) {
               Product::where('id', $orderItem->product_id)
                   ->increment('quantity', $orderItem->quantity);
