@@ -25,14 +25,11 @@ class ProductController extends Controller
         $rawProduct=Product::where('id','=',$request->product_id)->first();
     $product =$rawProduct;
      $favorite =   Favorite::where('product_id','=',$request->product_id)->where('user_id','=',auth()->user()->id)->first();
-if($favorite) {
+if($favorite)
     $product['favorite'] = "true";
-    $product['userName'] = auth()->user()->firstName . ' ' . auth()->user()->lastName;
-}
-else {
+
+else
     $product['favorite'] = 'false';
-    $product['userName'] = auth()->user()->firstName . ' ' . auth()->user()->lastName;
-}
         return response()->json(['status'=>1,
             'product'=>$product]);
 
@@ -41,6 +38,15 @@ else {
     {
 
         $favorites=User::find(auth()->id())->favorites;
+foreach ($favorites as $favorite) {
+    $product = Product::where('id', '=', $favorite->id)->first();
+    $favorite['store'] = [
+        'id' => $product->store['id'],
+        'name' => $product->store['name'],
+        'image' => $product->store['image']
+    ];
+}
+
         return response()->json([
             'status'=>1,
             'favorites'=>$favorites
