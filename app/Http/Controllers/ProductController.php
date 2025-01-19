@@ -25,7 +25,11 @@ class ProductController extends Controller
         $rawProduct=Product::where('id','=',$request->product_id)->first();
     $product =$rawProduct;
      $favorite =   Favorite::where('product_id','=',$request->product_id)->where('user_id','=',auth()->user()->id)->first();
-if($favorite)
+    $comment=Comment::where('user_id','=',auth()->id())->where('product_id','=',$request->product_id)->first();
+    if($comment)
+    {$product['rating']=$comment->rating;}
+    else{$product['rating']=0;}
+     if($favorite)
     $product['favorite'] = "true";
 
 else
@@ -52,20 +56,33 @@ foreach ($favorites as $favorite) {
             'favorites'=>$favorites
         ]);
     }
-    public function addReview(addReviewRequest $request){
-        Comment::create($request->all());
-        $product=Product::where('product_id')->get()->first();
+    public function addReview(Request $request){
+        $request->validate([
+            'product_id' => 'required|exists:products,id',
+            'rating' => 'required|numeric|min:1|max:5']);
+        $commentCheck=Comment::where('product_id','=',$request->product_id)->where('user_id','=',auth()->id())->first();
+        if(!$commentCheck){
+        Comment::create([
+            'user_id'=> auth()->id(),
+            'product_id'=>$request->product_id,
+            'rating'=>$request->rating
+            ]);
+        $product=Product::where('id','=',$request->product_id)->get()->first();
         $pr=$product->reviews * $product->reviews_count;
         $pr+=$request->rating;
         $product->reviews_count++;
         $product->reviews=$pr/$product->reviews_count;
         $product->save();
-        $store=Store::where($product->store_id,'=','store_id')->get()->first();
+        $store=Store::where('id','=',$product->store_id)->get()->first();
         $sr=$store->reviews * $store->reviews_count;
         $sr+=$request->rating;
         $store->reviews_count++;
         $store->reviews=$sr/$store->reviews_count;
         $store->save();
+        return response()->json(['status'=>1,'message'=>'Review added successfully']);}
+        else{
+            return response()->json(['status'=>0,'message'=>'Review already added']);
+        }
     }
     public function getRecommended()
     {

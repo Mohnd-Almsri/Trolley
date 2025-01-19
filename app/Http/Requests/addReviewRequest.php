@@ -23,8 +23,7 @@ class addReviewRequest extends FormRequest
     {
         return [
             'product_id' => 'required|exists:products,id',
-            'rating' => 'required|numeric|min:1|max:5',
-            'comment' => 'required|string'
+            'rating' => 'required|numeric|min:1|max:5'
         ];
     }
 }
