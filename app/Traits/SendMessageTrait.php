@@ -59,8 +59,8 @@ public function sendVerificationCode($user_phone,$code){
 
         $this->sendMessage($user_phone,$message);
     }
-    public function orderStatus($status){
-        $userPhone = auth()->user()->phoneNumber;
+    public function orderStatus($status,$number){
+        $userPhone = $number;
         $statusMessage = "";
 
         switch ($status) {

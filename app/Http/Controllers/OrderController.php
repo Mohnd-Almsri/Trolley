@@ -30,9 +30,9 @@ class
             $order->user_id = auth()->user()->id;
             $order->total_price = 0;
             $order->save();
-            StatusOrder::dispatch($order,1)->delay(now()->addMinutes(0.05));
-            StatusOrder::dispatch($order,2)->delay(now()->addMinutes(.01));
-            StatusOrder::dispatch($order,3)->delay(now()->addMinutes(.15));
+            StatusOrder::dispatch($order,1,auth()->user()->phoneNumber)->delay(now()->addMinutes(0.05));
+            StatusOrder::dispatch($order,2,auth()->user()->phoneNumber)->delay(now()->addMinutes(.01));
+            StatusOrder::dispatch($order,3,auth()->user()->phoneNumber)->delay(now()->addMinutes(.15));
             $productIds = collect($request->products)->pluck('product_id')->toArray();
             $productTable = Product::whereIn('id', $productIds)->get()->keyBy('id');
 

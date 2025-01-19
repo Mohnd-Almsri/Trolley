@@ -16,7 +16,8 @@ class StatusOrder implements ShouldQueue
      */
     public $order;
     public $status;
-    public function __construct($order, $status)
+    public $number;
+    public function __construct($order, $status,$number)
     {
         $this->order = $order;
         $this->status = $status;
@@ -36,7 +37,7 @@ class StatusOrder implements ShouldQueue
         }elseif ($this->status ==3) {
             $this->status ='delivered';
         }
-       $this->orderStauts($this->status);
+       $this->orderStauts($this->status,$this->number);
         Order::find($this->order->id)->update(['status' => $this->status]);
 
     }
