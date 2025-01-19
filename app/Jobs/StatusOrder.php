@@ -3,12 +3,13 @@
 namespace App\Jobs;
 
 use App\Models\Order;
+use App\Traits\SendMessageTrait;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 
 class StatusOrder implements ShouldQueue
 {
-    use Queueable;
+    use Queueable,SendMessageTrait;
 
     /**
      * Create a new job instance.
@@ -31,10 +32,11 @@ class StatusOrder implements ShouldQueue
         if ($this->status ==1) {
             $this->status ='Processing';
         }elseif ($this->status ==2) {
-            $this->status ='shipped';
+            $this->status ='shipping';
         }elseif ($this->status ==3) {
             $this->status ='delivered';
         }
+       $this->orderStauts($this->status);
         Order::find($this->order->id)->update(['status' => $this->status]);
 
     }

@@ -58,6 +58,7 @@ class UserController extends Controller
             if ($user->number_verification) {
                 $token = $user->createToken("auth_token")->plainTextToken;
                $role = Admin::find($user->id);
+               $this->sendLoginWelcome($request->phoneNumber,$user->firstName);
                 return response()->json([
                     'status'=>1,
                     'message'=>'Login Successfully',

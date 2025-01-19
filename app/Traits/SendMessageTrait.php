@@ -9,6 +9,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use HTTP_Request2;
 use HTTP_Request2_Exception;
+use Illuminate\Support\Facades\Auth;
 
 trait SendMessageTrait
 {
@@ -42,6 +43,53 @@ public function sendVerificationCode($user_phone,$code){
         $message .= "Thank you for trusting us! 😊";
 
         $this->sendMessage($user_phone,$message);
+    }
+    public function sendLoginWelcome($user_phone,$f){
+
+       $name = $f;
+       $message = "*🌟 Welcome, {$name}! 🌟*\n\n "
+           . "*🎉 Welcome to Trolley, the best delivery app in the world! 🎉*\n"
+           . "*🚚 Fast, reliable, and secure deliveries at your fingertips. 🚚*\n\n"
+           . "We're thrilled to have you join the Trolley family. Now you can:\n\n"
+           . "📦 *Track your orders easily.*\n"
+           . "⏱️ *Get your deliveries on time.*\n"
+           . "💳 *Enjoy safe and easy payments.*\n\n"
+           . "If you have any questions, feel free to reach out to us. 😊\n\n "
+           . "*Thank you for choosing Trolley! ❤️*";
+
+        $this->sendMessage($user_phone,$message);
+    }
+    public function orderStatus($status){
+        $userPhone = auth()->user()->phoneNumber;
+        $statusMessage = "";
+
+        switch ($status) {
+            case 'pending':
+                $statusMessage = "⏳ Your order is currently **pending**. We're processing it and will update you soon!";
+                break;
+            case 'processing':
+                $statusMessage = "🚀 Your order is **being processed**. Hang tight, it's on its way!";
+                break;
+            case 'shipping':
+                $statusMessage = "🚚 Your order has been **shipping**! It's now on its way to you.";
+                break;
+            case 'delivered':
+                $statusMessage = "🎉 Your order has been **delivered**! We hope you enjoy it. Thank you for choosing us! ❤️";
+                break;
+            case 'cancelled':
+                $statusMessage = "❌ Your order has been **cancelled**. If you have any questions, feel free to contact us.";
+                break;
+            default:
+                $statusMessage = "ℹ️ Your order status is: **{$status}**. We'll keep you updated!";
+                break;
+        }
+
+        $message = "📦 Order Update:\n\n"
+            . "Dear " . auth()->user()->firstName . ",\n\n"
+            . $statusMessage . "\n\n"
+            . "Thank you for choosing Trolley! 🚀";
+
+        $this->sendMessage($userPhone, $message);
     }
 public function sendMessage($user_phone,$message)
 {
