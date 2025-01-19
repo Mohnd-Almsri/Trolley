@@ -37,8 +37,8 @@ class StatusOrder implements ShouldQueue
         }elseif ($this->status ==3) {
             $this->status ='delivered';
         }
-       $this->orderStauts($this->status,$this->number);
         Order::find($this->order->id)->update(['status' => $this->status]);
+//        $this->orderStatus($this->status,$this->number);
 
     }
 }

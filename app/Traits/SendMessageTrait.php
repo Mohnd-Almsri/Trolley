@@ -60,14 +60,12 @@ public function sendVerificationCode($user_phone,$code){
         $this->sendMessage($user_phone,$message);
     }
     public function orderStatus($status,$number){
-        $userPhone = $number;
         $statusMessage = "";
-
         switch ($status) {
             case 'pending':
                 $statusMessage = "⏳ Your order is currently **pending**. We're processing it and will update you soon!";
                 break;
-            case 'processing':
+            case 'Processing':
                 $statusMessage = "🚀 Your order is **being processed**. Hang tight, it's on its way!";
                 break;
             case 'shipping':
@@ -89,7 +87,7 @@ public function sendVerificationCode($user_phone,$code){
             . $statusMessage . "\n\n"
             . "Thank you for choosing Trolley! 🚀";
 
-        $this->sendMessage($userPhone, $message);
+        $this->sendMessage($number, $message);
     }
 public function sendMessage($user_phone,$message)
 {
